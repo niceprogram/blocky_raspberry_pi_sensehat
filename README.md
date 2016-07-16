@@ -23,3 +23,6 @@ Paste the code
 click on the Blockly tab, and there you go.
 Click on the Python and copy your Python code
 
+
+ps if you want to know more about making your own blocks 
+https://github.com/niceprogram/blocky_raspberry_pi_sensehat
