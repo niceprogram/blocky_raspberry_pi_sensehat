@@ -1,7 +1,9 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <block type="procedures_defnoreturn" id="?7)|qsmj1XGJSUw7`C-D" x="-537" y="-288">
     <field name="NAME">move_M</field>
-    <comment pinned="true" h="80" w="160">Move CleanerMan within the confides of the maze with the arrow keys</comment>
+    <comment pinned="true" h="95.552001953125" w="334.5279541015625">Move CleanerMan within the confides of the maze with the arrow keys.
+The maze is read to see if the CleanerMan can move to the next position
+    </comment>
     <statement name="STACK">
       <block type="variables_set" id="Z(B^pkj#Wi1wj#Ey8SrP">
         <field name="VAR">newXY</field>
@@ -314,6 +316,12 @@
         </next>
       </block>
     </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="yD5AJT(J8!7de3kbm#b!" x="162" y="-263">
+    <field name="NAME">the_broom</field>
+    <comment pinned="true" h="209.60000610351562" w="310.3359375">the broom forms an O around the CleanerMan. It will sweep away all the LEDs, except the walls.
+The CleanerMan must not come into contact with the ghost
+    </comment>
   </block>
   <block type="variables_set" id="_rWEA+_nrJpq9hC|]I:9" x="337" y="287">
     <field name="VAR">new_ghostX</field>
