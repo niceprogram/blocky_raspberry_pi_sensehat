@@ -1,4 +1,335 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="procedures_defnoreturn" id="yD5AJT(J8!7de3kbm#b!" x="212" y="-387">
+    <field name="NAME">the_broom</field>
+    <comment pinned="false" h="209" w="310">the broom forms an O around the CleanerMan. It will sweep away all the LEDs, except the walls.</comment>
+    <statement name="STACK">
+      <block type="controls_for" id="lmDzw1r4RnhNHqrC~7VT">
+        <field name="VAR">broom_x</field>
+        <value name="FROM">
+          <shadow type="math_number" id="-TSj5jGJKGJ}[%CKA]FS">
+            <field name="NUM">-1</field>
+          </shadow>
+        </value>
+        <value name="TO">
+          <shadow type="math_number" id="ar0GxoLM2I{lC{_Oq/E^">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <value name="BY">
+          <shadow type="math_number" id="+-tg+57N+7sS@UFG)#uo">
+            <field name="NUM">1</field>
+          </shadow>
+        </value>
+        <statement name="DO">
+          <block type="controls_for" id=",RIH0Ya{)TwcdX-}l9SB">
+            <field name="VAR">broom_y</field>
+            <value name="FROM">
+              <shadow type="math_number" id="~d=D_3Cd48N;FxSc@oOg">
+                <field name="NUM">-8</field>
+              </shadow>
+            </value>
+            <value name="TO">
+              <shadow type="math_number" id="Rb(Kj6.NN,0VO^c72rY{">
+                <field name="NUM">8</field>
+              </shadow>
+            </value>
+            <value name="BY">
+              <shadow type="math_number" id="BM1[|5y2`%%TQsykiTTG">
+                <field name="NUM">8</field>
+              </shadow>
+            </value>
+            <statement name="DO">
+              <block type="variables_set" id="1UF-+ap0yzBy?9OpNscA">
+                <field name="VAR">broom_grid_no</field>
+                <value name="VALUE">
+                  <block type="math_arithmetic" id="IETRZZf_EQE3x])p7xP!">
+                    <field name="OP">ADD</field>
+                    <value name="A">
+                      <shadow type="math_number" id="43N,{0b`qM8nX/x9^_D^">
+                        <field name="NUM">1</field>
+                      </shadow>
+                      <block type="variables_get" id="r(k[OwHVJz35XAZ`gIL2">
+                        <field name="VAR">new_grid_no</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <shadow type="math_number" id="h(7pzy@OkLBdu|u;{3pD">
+                        <field name="NUM">1</field>
+                      </shadow>
+                      <block type="math_arithmetic" id="26*Zk]%V*a+1u~OYy|+,">
+                        <field name="OP">ADD</field>
+                        <value name="A">
+                          <shadow type="math_number" id=";|]:-]/CVRWNRcZ9@~Ie">
+                            <field name="NUM">1</field>
+                          </shadow>
+                          <block type="variables_get" id="M,ww|fQHumbf,3EQ|P3n">
+                            <field name="VAR">broom_x</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <shadow type="math_number" id="uIj-_jy/tw_lr4lr@QA`">
+                            <field name="NUM">1</field>
+                          </shadow>
+                          <block type="variables_get" id="08X]rF440#@ZS)@=Tz[8">
+                            <field name="VAR">broom_y</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set" id="nKLz/h?]rfUSyUXzhZI?">
+                    <field name="VAR">read_grid</field>
+                    <value name="VALUE">
+                      <block type="lists_getIndex" id="`(H*QpuMlxyR=Ic85eko">
+                        <mutation statement="false" at="true"></mutation>
+                        <field name="MODE">GET</field>
+                        <field name="WHERE">FROM_START</field>
+                        <value name="VALUE">
+                          <block type="variables_get" id=".KH)G1a3MhhYEQWyQoD5">
+                            <field name="VAR">Maze_field</field>
+                          </block>
+                        </value>
+                        <value name="AT">
+                          <block type="math_arithmetic" id="#~]IAs%2=e(=DUH#1-A7">
+                            <field name="OP">ADD</field>
+                            <value name="A">
+                              <shadow type="math_number" id="rn_0;_OBI6IJH2t*4JE9">
+                                <field name="NUM">1</field>
+                              </shadow>
+                              <block type="variables_get" id="@csFtm0UU4%@xr58p%+l">
+                                <field name="VAR">new_grid_no</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <shadow type="math_number" id="iD(kw,H_(}I@lT)1JxJF">
+                                <field name="NUM">1</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="controls_if" id="r:9l5n^)4AFytz%EuEnb">
+                        <value name="IF0">
+                          <block type="logic_operation" id="n+[)Ma{`YKkguiv_Yt%7">
+                            <field name="OP">AND</field>
+                            <value name="A">
+                              <block type="logic_operation" id="@f-U+?K-=syHxq!p`^Ct">
+                                <field name="OP">AND</field>
+                                <value name="A">
+                                  <block type="logic_operation" id="J2#HY:Beq);8oW@s4MeE">
+                                    <field name="OP">AND</field>
+                                    <value name="A">
+                                      <block type="logic_compare" id="M5K-@.lmP9X~^~m+{lvk">
+                                        <field name="OP">LT</field>
+                                        <value name="A">
+                                          <block type="math_number" id="On3W;DWS^tY(#ZiwC#2S">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_arithmetic" id=",FF`vw?uc^1|SFsyKoUZ">
+                                            <field name="OP">ADD</field>
+                                            <value name="A">
+                                              <shadow type="math_number" id=";|]:-]/CVRWNRcZ9@~Ie">
+                                                <field name="NUM">1</field>
+                                              </shadow>
+                                              <block type="variables_get" id="n`R7=6gts3i77ZGPSnLk">
+                                                <field name="VAR">Mx</field>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <shadow type="math_number" id="uIj-_jy/tw_lr4lr@QA`">
+                                                <field name="NUM">1</field>
+                                              </shadow>
+                                              <block type="variables_get" id="D,A%zB,N|=^a4{yulmBf">
+                                                <field name="VAR">broom_x</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="logic_compare" id="Z54vXRcn[P20~PS^(GYT">
+                                        <field name="OP">LT</field>
+                                        <value name="A">
+                                          <block type="math_arithmetic" id="ZwxV]7jV?wV}5DT/;2;7">
+                                            <field name="OP">ADD</field>
+                                            <value name="A">
+                                              <shadow type="math_number" id=";|]:-]/CVRWNRcZ9@~Ie">
+                                                <field name="NUM">1</field>
+                                              </shadow>
+                                              <block type="variables_get" id=".}LA#~BmwE78YU[M,[^o">
+                                                <field name="VAR">Mx</field>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <shadow type="math_number" id="uIj-_jy/tw_lr4lr@QA`">
+                                                <field name="NUM">1</field>
+                                              </shadow>
+                                              <block type="variables_get" id="}PvEOt{|DODx*rOD(,L6">
+                                                <field name="VAR">broom_x</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="9/5,JgAA|`mRb@f2O(51">
+                                            <field name="NUM">7</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="logic_operation" id="es|Dz4N@faf.Gy.94Dqr">
+                                    <field name="OP">AND</field>
+                                    <value name="A">
+                                      <block type="logic_compare" id="T_gz{VMlJ4~Q)B2~/CwW">
+                                        <field name="OP">LT</field>
+                                        <value name="A">
+                                          <block type="math_number" id="Xab=4yab=yXBc_@H@c/+">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_arithmetic" id=",a*UnSSl}cfFH[uPP6i0">
+                                            <field name="OP">ADD</field>
+                                            <value name="A">
+                                              <shadow type="math_number" id=";|]:-]/CVRWNRcZ9@~Ie">
+                                                <field name="NUM">1</field>
+                                              </shadow>
+                                              <block type="variables_get" id="aY56WqKIFAQ1h6]s~8MZ">
+                                                <field name="VAR">My</field>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <shadow type="math_number" id="uIj-_jy/tw_lr4lr@QA`">
+                                                <field name="NUM">1</field>
+                                              </shadow>
+                                              <block type="variables_get" id="v:uKeoX^XQgJ2slWZok+">
+                                                <field name="VAR">broom_y</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="logic_compare" id="56OC@}:P?i]8x49yHVAO">
+                                        <field name="OP">LT</field>
+                                        <value name="A">
+                                          <block type="math_arithmetic" id="r.56m_BJj][F)g^8Tw@R">
+                                            <field name="OP">ADD</field>
+                                            <value name="A">
+                                              <shadow type="math_number" id=";|]:-]/CVRWNRcZ9@~Ie">
+                                                <field name="NUM">1</field>
+                                              </shadow>
+                                              <block type="variables_get" id="*|6CP#BF+xTu9}p,VQMx">
+                                                <field name="VAR">My</field>
+                                              </block>
+                                            </value>
+                                            <value name="B">
+                                              <shadow type="math_number" id="uIj-_jy/tw_lr4lr@QA`">
+                                                <field name="NUM">1</field>
+                                              </shadow>
+                                              <block type="variables_get" id="wAtjIk;3i!ju2^xAe9zA">
+                                                <field name="VAR">broom_y</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="KY6vBspt_{Pmv={Od-Gi">
+                                            <field name="NUM">7</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <block type="logic_compare" id="U0KBA0BQ+;!^-qm-~~iw">
+                                <field name="OP">EQ</field>
+                                <value name="A">
+                                  <block type="variables_get" id="-PG2m[lUa-2~KR9i{(?*">
+                                    <field name="VAR">grid_move_ok</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="variables_get" id="*rZl`MAwxZd@%#s2HmBN">
+                                    <field name="VAR">read_grid</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <statement name="DO0">
+                          <block type="set_pixel" id="11Q++G51[;dp#!5Eazdj">
+                            <field name="colour">#000000</field>
+                            <value name="_X">
+                              <block type="math_arithmetic" id="iQ2JHbv:uy,/`~.Jpkx-">
+                                <field name="OP">ADD</field>
+                                <value name="A">
+                                  <shadow type="math_number" id=";|]:-]/CVRWNRcZ9@~Ie">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                  <block type="variables_get" id="Ta~37g.#!HMq8=|/`EU:">
+                                    <field name="VAR">Mx</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <shadow type="math_number" id="uIj-_jy/tw_lr4lr@QA`">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                  <block type="variables_get" id="DLDg(Vs@)-;e_7w^XW6=">
+                                    <field name="VAR">broom_x</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="_Y">
+                              <block type="math_arithmetic" id="(AfqPKr61]@K).^^zfSm">
+                                <field name="OP">ADD</field>
+                                <value name="A">
+                                  <shadow type="math_number" id=";|]:-]/CVRWNRcZ9@~Ie">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                  <block type="variables_get" id=")#5qdU3eQ~cZl0:JA:c#">
+                                    <field name="VAR">My</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <shadow type="math_number" id="uIj-_jy/tw_lr4lr@QA`">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                  <block type="variables_get" id="Vf?32rQBm0g5oHz5sni/">
+                                    <field name="VAR">broom_y</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </statement>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
   <block type="procedures_defnoreturn" id="?7)|qsmj1XGJSUw7`C-D" x="-537" y="-288">
     <field name="NAME">move_M</field>
     <comment pinned="false" h="95" w="334">Move CleanerMan within the confides of the maze with the arrow keys.
@@ -135,8 +466,21 @@ The maze is read to see if the CleanerMan can move to the next position
                               </block>
                             </value>
                             <value name="AT">
-                              <block type="variables_get" id="MeujBNqy}L?D!CF:QJP[">
-                                <field name="VAR">new_grid_no</field>
+                              <block type="math_arithmetic" id="ZbUc1bbrTvVRX;6l@7]?">
+                                <field name="OP">ADD</field>
+                                <value name="A">
+                                  <shadow type="math_number" id="rn_0;_OBI6IJH2t*4JE9">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                  <block type="variables_get" id="MeujBNqy}L?D!CF:QJP[">
+                                    <field name="VAR">new_grid_no</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <shadow type="math_number" id="[pv)R;OUnW)MXtcB~}lR">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                </value>
                               </block>
                             </value>
                           </block>
@@ -208,131 +552,6 @@ The maze is read to see if the CleanerMan can move to the next position
             </next>
           </block>
         </next>
-      </block>
-    </statement>
-  </block>
-  <block type="procedures_defnoreturn" id="yD5AJT(J8!7de3kbm#b!" x="88" y="-287">
-    <field name="NAME">the_broom</field>
-    <comment pinned="false" h="209" w="310">the broom forms an O around the CleanerMan. It will sweep away all the LEDs, except the walls.</comment>
-    <statement name="STACK">
-      <block type="controls_for" id="lmDzw1r4RnhNHqrC~7VT">
-        <field name="VAR">broom_x</field>
-        <value name="FROM">
-          <shadow type="math_number" id="-TSj5jGJKGJ}[%CKA]FS">
-            <field name="NUM">-1</field>
-          </shadow>
-        </value>
-        <value name="TO">
-          <shadow type="math_number" id="ar0GxoLM2I{lC{_Oq/E^">
-            <field name="NUM">1</field>
-          </shadow>
-        </value>
-        <value name="BY">
-          <shadow type="math_number" id="+-tg+57N+7sS@UFG)#uo">
-            <field name="NUM">1</field>
-          </shadow>
-        </value>
-        <statement name="DO">
-          <block type="controls_for" id=",RIH0Ya{)TwcdX-}l9SB">
-            <field name="VAR">broom_y</field>
-            <value name="FROM">
-              <shadow type="math_number" id="~d=D_3Cd48N;FxSc@oOg">
-                <field name="NUM">-8</field>
-              </shadow>
-            </value>
-            <value name="TO">
-              <shadow type="math_number" id="Rb(Kj6.NN,0VO^c72rY{">
-                <field name="NUM">8</field>
-              </shadow>
-            </value>
-            <value name="BY">
-              <shadow type="math_number" id="BM1[|5y2`%%TQsykiTTG">
-                <field name="NUM">8</field>
-              </shadow>
-            </value>
-            <statement name="DO">
-              <block type="variables_set" id="1UF-+ap0yzBy?9OpNscA">
-                <field name="VAR">broom_grid_no</field>
-                <value name="VALUE">
-                  <block type="math_arithmetic" id="IETRZZf_EQE3x])p7xP!">
-                    <field name="OP">ADD</field>
-                    <value name="A">
-                      <shadow type="math_number" id="43N,{0b`qM8nX/x9^_D^">
-                        <field name="NUM">1</field>
-                      </shadow>
-                      <block type="variables_get" id="r(k[OwHVJz35XAZ`gIL2">
-                        <field name="VAR">read_grid</field>
-                      </block>
-                    </value>
-                    <value name="B">
-                      <shadow type="math_number" id="h(7pzy@OkLBdu|u;{3pD">
-                        <field name="NUM">1</field>
-                      </shadow>
-                      <block type="math_arithmetic" id="26*Zk]%V*a+1u~OYy|+,">
-                        <field name="OP">ADD</field>
-                        <value name="A">
-                          <shadow type="math_number" id=";|]:-]/CVRWNRcZ9@~Ie">
-                            <field name="NUM">1</field>
-                          </shadow>
-                          <block type="variables_get" id="M,ww|fQHumbf,3EQ|P3n">
-                            <field name="VAR">broom_x</field>
-                          </block>
-                        </value>
-                        <value name="B">
-                          <shadow type="math_number" id="uIj-_jy/tw_lr4lr@QA`">
-                            <field name="NUM">1</field>
-                          </shadow>
-                          <block type="variables_get" id="08X]rF440#@ZS)@=Tz[8">
-                            <field name="VAR">broom_y</field>
-                          </block>
-                        </value>
-                      </block>
-                    </value>
-                  </block>
-                </value>
-                <next>
-                  <block type="controls_if" id="r:9l5n^)4AFytz%EuEnb">
-                    <value name="IF0">
-                      <block type="logic_compare" id="U0KBA0BQ+;!^-qm-~~iw">
-                        <field name="OP">EQ</field>
-                        <value name="A">
-                          <block type="variables_get" id="-PG2m[lUa-2~KR9i{(?*">
-                            <field name="VAR">grid_move_ok</field>
-                          </block>
-                        </value>
-                        <value name="B">
-                          <block type="variables_get" id="*rZl`MAwxZd@%#s2HmBN">
-                            <field name="VAR">broom_grid_no</field>
-                          </block>
-                        </value>
-                      </block>
-                    </value>
-                    <statement name="DO0">
-                      <block type="variables_set" id="*LEgP@y*0nZ)Y)cv/7~)">
-                        <field name="VAR">Mx</field>
-                        <value name="VALUE">
-                          <block type="variables_get" id="j%Hnmf:9X893bU*_ykR[">
-                            <field name="VAR">Mnew_x</field>
-                          </block>
-                        </value>
-                        <next>
-                          <block type="variables_set" id="zj#w#;Dz,V|6;Mk5UW3-">
-                            <field name="VAR">My</field>
-                            <value name="VALUE">
-                              <block type="variables_get" id="7drIj/4LMMm[LqT1{Cc1">
-                                <field name="VAR">Mnew_y</field>
-                              </block>
-                            </value>
-                          </block>
-                        </next>
-                      </block>
-                    </statement>
-                  </block>
-                </next>
-              </block>
-            </statement>
-          </block>
-        </statement>
       </block>
     </statement>
   </block>
@@ -599,7 +818,7 @@ The maze is read to see if the CleanerMan can move to the next position
                               </block>
                             </value>
                             <value name="B">
-                              <block type="curses_down" id="i(]T1:.*2N3R}HlJgeWO"></block>
+                              <block type="curses_right" id="m?~uDF6dzP2}U3!PZFuC"></block>
                             </value>
                           </block>
                         </value>
@@ -685,7 +904,7 @@ The maze is read to see if the CleanerMan can move to the next position
                               </block>
                             </value>
                             <value name="B">
-                              <block type="curses_right" id="m?~uDF6dzP2}U3!PZFuC"></block>
+                              <block type="curses_down" id="i(]T1:.*2N3R}HlJgeWO"></block>
                             </value>
                           </block>
                         </value>
