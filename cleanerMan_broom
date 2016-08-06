@@ -213,9 +213,7 @@ The maze is read to see if the CleanerMan can move to the next position
   </block>
   <block type="procedures_defnoreturn" id="yD5AJT(J8!7de3kbm#b!" x="88" y="-287">
     <field name="NAME">the_broom</field>
-    <comment pinned="false" h="209" w="310">the broom forms an O around the CleanerMan. It will sweep away all the LEDs, except the walls.
-The CleanerMan must not come into contact with the ghost
-    </comment>
+    <comment pinned="false" h="209" w="310">the broom forms an O around the CleanerMan. It will sweep away all the LEDs, except the walls.</comment>
     <statement name="STACK">
       <block type="controls_for" id="lmDzw1r4RnhNHqrC~7VT">
         <field name="VAR">broom_x</field>
@@ -343,7 +341,7 @@ The CleanerMan must not come into contact with the ghost
     <value name="VALUE">
       <block type="lists_create_with" id="H?vju}p*!A=)A2j]5xpb">
         <mutation items="3"></mutation>
-        <comment pinned="false" h="80" w="160">green wall</comment>
+        <comment pinned="false" h="80" w="160">Cleaner_Man may move on these purple fields</comment>
         <value name="ADD0">
           <block type="math_number" id="[c([dP(Nx93[hm(4:B*x">
             <field name="NUM">102</field>
