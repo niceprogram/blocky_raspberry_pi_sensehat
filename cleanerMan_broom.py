@@ -32,8 +32,8 @@ def the_broom():
       broom_grid_no = new_grid_no + (broom_x + broom_y)
       read_grid = Maze_field[int((new_grid_no + 1) - 1)]
       if ((0 < Mx + broom_x and Mx + broom_x < 7) and (0 < My + broom_y and My + broom_y < 7)) and grid_move_ok == read_grid:
-        sense.set_pixel((Mx + broom_x),(My + broom_y),[0,0,0])   # (x,y,r,g,b)
-
+        sense.set_pixel((Mx + broom_x),(My + broom_y),[05,50,50])   # (x,y,r,g,b)
+      read_grid = 0
 # Move CleanerMan within the confides of the maze with the arrow keys.
 # The maze is read to see if the CleanerMan can move to the next position
 def move_M():
@@ -44,26 +44,45 @@ def move_M():
   new_grid_no = Mnew_x + Mnew_y * 8
   read_grid = Maze_field[int((new_grid_no + 1) - 1)]
   if grid_move_ok == read_grid:
-    Mx = Mnew_x
-    My = Mnew_y
-    sense.set_pixel(Mx,My,[255,255,0])   # (x,y,r,g,b)
-    the_broom()
+
+		sense.set_pixel(Mx,My,[0,0,0])   # (x,y,r,g,b)
+
+		Mx = Mnew_x
+
+		My = Mnew_y
+		the_broom()
+		sense.set_pixel(Mx,My,[255,255,0])   # (x,y,r,g,b)
+    
 
 # listen to the key input, return X&Y for the CleanerMan
 def listen_for_key():
+
   global key, tempX, tempY, Mx, My, tempXY
+
   key = screen.getch()
+
   tempX = 0
+
   tempY = 0
-  if Mx != 0 and key == curses.KEY_UP:
+
+  if Mx != 0 and key == curses.KEY_LEFT:
+
     tempX = -1
+
   elif Mx != 7 and key == curses.KEY_RIGHT:
+
     tempX = 1
-  elif My != 0 and key == curses.KEY_LEFT:
+
+  elif My != 0 and key == curses.KEY_UP:
+
     tempY = -1
+
   elif My != 7 and key == curses.KEY_DOWN:
+
     tempY = 1
+
   tempXY = [tempX, tempY]
+
   return tempXY
 
 
