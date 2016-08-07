@@ -26,13 +26,14 @@ Maze_field = None
 
 # the broom forms an O around the CleanerMan. It will sweep away all the LEDs, except the walls.
 def the_broom():
-  global broom_x, broom_y, broom_grid_no, new_grid_no, read_grid, Maze_field, Mx, My, grid_move_ok
+  global broom_x, broom_y, Mx, My, broom_grid_no, new_grid_no, read_grid, Maze_field, grid_move_ok
   for broom_x in range(-1, 2):
-    for broom_y in range(-8, 9, 8):
-      broom_grid_no = new_grid_no + (broom_x + broom_y)
-      read_grid = Maze_field[int((new_grid_no + 1) - 1)]
-      if ((0 < Mx + broom_x and Mx + broom_x < 7) and (0 < My + broom_y and My + broom_y < 7)) and grid_move_ok == read_grid:
-        sense.set_pixel((Mx + broom_x),(My + broom_y),[05,50,50])   # (x,y,r,g,b)
+    for broom_y in range(-1, 2):
+      if (0 < Mx + broom_x and Mx + broom_x < 7) and (0 < My + broom_y and My + broom_y < 7):
+        broom_grid_no = new_grid_no + (broom_x + 8 * broom_y)
+        read_grid = Maze_field[int((new_grid_no + 1) - 1)]
+        if grid_move_ok == read_grid:
+          sense.set_pixel((Mx + broom_x),(My + broom_y),[162,0,70])   # (x,y,r,g,b)
       read_grid = 0
 # Move CleanerMan within the confides of the maze with the arrow keys.
 # The maze is read to see if the CleanerMan can move to the next position
