@@ -808,7 +808,7 @@ Blockly.JavaScript['get_pressure'] = function(block) {
 // python generator
 Blockly.Python['get_pressure'] = function(block) {
   // TODO: Assemble Python into code variable.
-  var code =  'sense.get_pressure()()\n';
+  var code =  'sense.get_pressure()\n';
   Blockly.Python.definitions_['sensehat'] = 'from sense_hat import SenseHat\nsense = SenseHat()\n';
   return [code, Blockly.Python.ORDER_ATOMIC];
 };
