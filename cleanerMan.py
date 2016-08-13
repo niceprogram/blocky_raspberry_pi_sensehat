@@ -36,12 +36,41 @@ Maze_field = None
 
 # Move CleanerMan within the confides of the maze with the arrow keys
 def move_M():
+  global newXY# the broom forms an O around the CleanerMan. It will sweep away all the LEDs, except the walls.
+def the_broom():
+  global broom_x, broom_y, Mx, My, broom_grid_no, new_grid_no, read_grid, Maze_field, grid_move_ok
+  for broom_x in range(-1, 2):
+    for broom_y in range(-1, 2):
+      if (-1 < Mx + broom_x and Mx + broom_x < 8) and (-1 < My + broom_y and My + broom_y < 8):
+        broom_grid_no = new_grid_no + (broom_x + 8 * broom_y)
+        read_grid = Maze_field[int((broom_grid_no + 1) - 1)]
+        if grid_move_ok == read_grid:
+          sense.set_pixel((Mx + broom_x),(My + broom_y),[0,0,0])   # (x,y,r,g,b)
+      read_grid = 0
+# Move CleanerMan within the confides of the maze with the arrow keys.
+# The maze is read to see if the CleanerMan can move to the next position
+def move_M():
   global newXY, Mnew_x, Mx, Mnew_y, My, new_grid_no, read_grid, Maze_field, grid_move_ok
   newXY = listen_for_key()
   Mnew_x = Mx + newXY[0]
   Mnew_y = My + newXY[1]
   new_grid_no = Mnew_x + Mnew_y * 8
-  read_grid = Maze_field[int(new_grid_no - 1)]
+  read_grid = Maze_field[int((new_grid_no + 1) - 1)]
+  if grid_move_ok == read_grid:
+
+		sense.set_pixel(Mx,My,[0,0,0])   # (x,y,r,g,b)
+
+		Mx = Mnew_x
+
+		My = Mnew_y
+		the_broom()
+		sense.set_pixel(Mx,My,[255,255,0])   # (x,y,r,g,b), Mnew_x, Mx, Mnew_y, My, new_grid_no, read_grid, Maze_field, grid_move_ok
+  newXY = listen_for_key()
+  Mnew_x = Mx + newXY[0]
+  Mnew_y = My + newXY[1]
+  new_grid_no = Mnew_x + Mnew_y * 8
+# fix from ...eld[int(new_grid_no - 1)]
+  read_grid = Maze_field[int(new_grid_no)]
   if grid_move_ok == read_grid:
     sense.set_pixel(Mx,My,[0,0,0])   # (x,y,r,g,b)
     Mx = Mnew_x
@@ -54,7 +83,7 @@ def ghostXY(ghost_position):
   for multipleof8 in range(0, 65, 8):
     test_forX = ghost_position - multipleof8
     if 0 <= test_forX and test_forX <= 7:
-      sense.set_pixel(new_ghostX,new_ghostY,[102,0,204])   # (x,y,r,g,b)
+      sense.set_pixel(new_ghostX,new_ghostY,[102,150,204])   # (x,y,r,g,b)
       new_ghostX = test_forX
       new_ghostY = multipleof8 / 8
       sense.set_pixel(new_ghostX,new_ghostY,[255,0,0])   # (x,y,r,g,b)
@@ -71,9 +100,10 @@ def move_ghost():
       ghost_path = ghost_path_02
     else:
       ghost_path = ghost_path_03
-  for i in ghost_path:
-    ghostXY(i)
-    sleep(500/1000);
+    for i in ghost_path:
+     ghostXY(i)
+     #print(i)
+     sleep(1000/1000);
 
 # listen to the key input, return X&Y for the CleanerMan
 def listen_for_key():
@@ -81,13 +111,13 @@ def listen_for_key():
   key = screen.getch()
   tempX = 0
   tempY = 0
-  if Mx != 0 and key == curses.KEY_UP:
+  if Mx != 0 and key == curses.KEY_LEFT:
     tempX = -1
-  elif Mx != 7 and key == curses.KEY_DOWN:
+  elif Mx != 7 and key == curses.KEY_RIGHT:
     tempX = 1
-  elif My != 0 and key == curses.KEY_LEFT:
+  elif My != 0 and key == curses.KEY_UP:
     tempY = -1
-  elif My != 7 and key == curses.KEY_RIGHT:
+  elif My != 7 and key == curses.KEY_DOWN:
     tempY = 1
   tempXY = [tempX, tempY]
   return tempXY
@@ -99,10 +129,10 @@ def listen_for_key():
 new_ghostX = 0
 new_ghostY = 0
 grid_move_ok = [102, 0, 204]
-Mx = 3
-My = 3
-Mnew_x = 3
-Mnew_y = 3
+Mx = 0
+My = 0
+Mnew_x = 0
+Mnew_y = 0
 
 
 # arrays (these arrays were expanded later.)
@@ -124,6 +154,7 @@ sense.set_pixels(Maze_field)   # [[r,g,b], [r,g,b],...]
 import threading
 thread = threading.Thread(target =  move_ghost)
 thread.start()
+sense.set_pixel(0,0,[255,255,0]) 
 while True:
   move_M()
   
