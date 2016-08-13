@@ -14,7 +14,7 @@ https://developers.google.com/blockly/guides/modify/web/closure   ----->Get clos
  note it will replace the index.html file in blockly>demos>code
 8. test if it works
 
-Format: ![Alt Text](https://github.com/niceprogram/blocky_raspberry_pi_sensehat/blob/master/example_SHat_LED_Blockly.jpg)
+![example](https://github.com/niceprogram/blocky_raspberry_pi_sensehat/blob/master/example_SHat_LED_Blockly.jpg)
 
 
 Importing XML
