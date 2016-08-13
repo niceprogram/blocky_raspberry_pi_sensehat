@@ -1,14 +1,3 @@
-from sense_hat import SenseHat
-sense = SenseHat()
-
-import random
-from time import sleep
-import curses
-screen = curses.initscr()
-screen.keypad(True)
-curses.cbreak()
-curses.noecho()
-
 ghost_path_01 = None
 test_XY = None
 ghost_position = None
@@ -90,13 +79,13 @@ def listen_for_key():
   key = screen.getch()
   tempX = 0
   tempY = 0
-  if Mx != 0 and key == curses.KEY_UP:
+  if Mx != 0 and key == curses.KEY_LEFT:
     tempX = -1
-  elif Mx != 7 and key == curses.KEY_DOWN:
+  elif Mx != 7 and key == curses.KEY_RIGHT:
     tempX = 1
-  elif My != 0 and key == curses.KEY_LEFT:
+  elif My != 0 and key == curses.KEY_UP:
     tempY = -1
-  elif My != 7 and key == curses.KEY_RIGHT:
+  elif My != 7 and key == curses.KEY_DOWN:
     tempY = 1
   tempXY = [tempX, tempY]
   return tempXY
@@ -120,16 +109,15 @@ def the_broom():
     for broom_y in range(-1, 2):
       if test_XY_inside_grid(Mx + broom_x) and test_XY_inside_grid(My + broom_y):
         broom_grid_no = new_grid_no + (broom_x + 8 * broom_y)
-        read_grid = Maze_field[int((new_grid_no + 1) - 1)]
+        read_grid = Maze_field[int((broom_grid_no + 1) - 1)]
         if grid_move_ok == read_grid and ghost_position != read_grid:
           sense.set_pixel((Mx + broom_x),(My + broom_y),[162,0,70])   # (x,y,r,g,b)
 
 
 # expand the paths in the python editr
-
-ghost_path_01 = [28,36,44,52,60,61,62,63,55,54,47,38,37,36,35,34,33,25,17,18,19,11,10,9,1,0,1,2,3,4,5,6,7,6,5,4,3,2,1,9,10,18,17,25,33,34,35,36]
-ghost_path_02 = [28,29,30,38,47,54,62,61,60,52,44,36,35,34,33,34,35,36]
-ghost_path_03 = [28,36,35,34,33,25,17,18,10,2,3,4,5,13,5,4,3,11,19,18,17,25,33,41,40,41,33,34,35,36]
+ghost_path_01 = [0, 1, 2, 3, 11, 19, 18, 17, 16, 8]
+ghost_path_02 = [0, 1, 2, 3, 2, 1]
+ghost_path_03 = [0, 8, 16, 17, 16, 8]
 new_ghostX = 0
 new_ghostY = 0
 grid_move_ok = [102, 0, 204]
