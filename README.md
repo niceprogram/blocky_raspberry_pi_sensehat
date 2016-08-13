@@ -9,12 +9,13 @@ https://developers.google.com/blockly/guides/modify/web/closure   ----->Get clos
 3. create a  new google folder in your documentes
 4. Extract both zipfiles into this new google folder
 5. test if it works
-
 6. Get the blocky_raspberry_pi_sensehat  files in a zip (from this site)
 7. Drag and drop blockly folder from the zip into the the blockly folder that you have created in step 4
  note it will replace the index.html file in blockly>demos>code
- 
 8. test if it works
+
+Format: ![Alt Text](https://github.com/niceprogram/blocky_raspberry_pi_sensehat/blob/master/example_SHat_LED_Blockly.jpg)
+
 
 Importing XML
 copy the XML in the examples
