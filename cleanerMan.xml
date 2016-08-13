@@ -400,7 +400,7 @@
   </block>
   <block type="procedures_defnoreturn" id="zQO[N!WmTOFJ.wgmp-=5" x="837" y="-63">
     <field name="NAME">move_ghost</field>
-    <comment pinned="true" h="88.03755187988281" w="390.4097900390625">This function sets up the ghost path. (later you can expand the ghost_path arrays using a text editor).</comment>
+    <comment pinned="true" h="88" w="390">This function sets up the ghost path. (later you can expand the ghost_path arrays using a text editor).</comment>
     <statement name="STACK">
       <block type="controls_repeat_ext" id="_2L)V]L%M@d].[QIY:;U">
         <value name="TIMES">
@@ -528,7 +528,7 @@
   </block>
   <block type="procedures_defnoreturn" id="?7)|qsmj1XGJSUw7`C-D" x="2562" y="-112">
     <field name="NAME">move_M</field>
-    <comment pinned="true" h="75.17747497558594" w="259.6656494140625">Move CleanerMan within the confides of the maze with the arrow keys</comment>
+    <comment pinned="true" h="75" w="259">Move CleanerMan within the confides of the maze with the arrow keys</comment>
     <statement name="STACK">
       <block type="variables_set" id="Z(B^pkj#Wi1wj#Ey8SrP">
         <field name="VAR">newXY</field>
@@ -669,7 +669,7 @@
                         <next>
                           <block type="controls_if" id="NCM;}~MxkL)lV[!G=*@i">
                             <mutation elseif="1"></mutation>
-                            <comment pinned="true" h="142.96078491210938" w="145.26449584960938">test if CleanerMan has not collided with the ghost.
+                            <comment pinned="true" h="142" w="145">test if CleanerMan has not collided with the ghost.
 Check if the CleanerMan can
                             </comment>
                             <value name="IF0">
@@ -885,7 +885,7 @@ Check if the CleanerMan can
                               </block>
                             </value>
                             <value name="B">
-                              <block type="curses_up" id="ear,`BFhi/T|M~cZ..FY"></block>
+                              <block type="curses_left" id=":-lqxQafUUrHJ[o#sF^u"></block>
                             </value>
                           </block>
                         </value>
@@ -928,7 +928,7 @@ Check if the CleanerMan can
                               </block>
                             </value>
                             <value name="B">
-                              <block type="curses_down" id="i(]T1:.*2N3R}HlJgeWO"></block>
+                              <block type="curses_right" id="m?~uDF6dzP2}U3!PZFuC"></block>
                             </value>
                           </block>
                         </value>
@@ -971,7 +971,7 @@ Check if the CleanerMan can
                               </block>
                             </value>
                             <value name="B">
-                              <block type="curses_left" id=":-lqxQafUUrHJ[o#sF^u"></block>
+                              <block type="curses_up" id="ear,`BFhi/T|M~cZ..FY"></block>
                             </value>
                           </block>
                         </value>
@@ -1014,7 +1014,7 @@ Check if the CleanerMan can
                               </block>
                             </value>
                             <value name="B">
-                              <block type="curses_right" id="m?~uDF6dzP2}U3!PZFuC"></block>
+                              <block type="curses_down" id="i(]T1:.*2N3R}HlJgeWO"></block>
                             </value>
                           </block>
                         </value>
@@ -1069,7 +1069,7 @@ Check if the CleanerMan can
       <arg name="ghost_position"></arg>
     </mutation>
     <field name="NAME">ghostXY</field>
-    <comment pinned="true" h="62.585296630859375" w="350.2220458984375">This function calculates the x and y of the ghost from the ghost_path.</comment>
+    <comment pinned="true" h="62" w="350">This function calculates the x and y of the ghost from the ghost_path.</comment>
     <statement name="STACK">
       <block type="controls_for" id="QEEE^B,)@EXNEw9vmjC]">
         <field name="VAR">multipleof8</field>
@@ -1203,7 +1203,7 @@ Check if the CleanerMan can
   </block>
   <block type="procedures_defnoreturn" id="yD5AJT(J8!7de3kbm#b!" x="3937" y="-137">
     <field name="NAME">the_broom</field>
-    <comment pinned="true" h="85.22171020507812" w="305.1773681640625">the broom forms an O around the CleanerMan. It will sweep away all the LEDs, except the walls.</comment>
+    <comment pinned="true" h="85" w="305">the broom forms an O around the CleanerMan. It will sweep away all the LEDs, except the walls.</comment>
     <statement name="STACK">
       <block type="controls_for" id="lmDzw1r4RnhNHqrC~7VT">
         <field name="VAR">broom_x</field>
@@ -1377,7 +1377,7 @@ Check if the CleanerMan can
                                     <field name="NUM">1</field>
                                   </shadow>
                                   <block type="variables_get" id="@csFtm0UU4%@xr58p%+l">
-                                    <field name="VAR">new_grid_no</field>
+                                    <field name="VAR">broom_grid_no</field>
                                   </block>
                                 </value>
                                 <value name="B">
