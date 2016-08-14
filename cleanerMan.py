@@ -1,3 +1,14 @@
+from sense_hat import SenseHat
+sense = SenseHat()
+
+import random
+from time import sleep
+import curses
+screen = curses.initscr()
+screen.keypad(True)
+curses.cbreak()
+curses.noecho()
+
 ghost_path_01 = None
 test_XY = None
 ghost_position = None
@@ -19,7 +30,6 @@ ghost_path = None
 Mnew_y = None
 tempY = None
 new_ghostY = None
-test = None
 Mx = None
 new_grid_no = None
 broom_grid_no = None
@@ -30,10 +40,8 @@ Maze_field = None
 
 # test is number are between 0 and 7
 def test_XY_inside_grid(test_XY):
-  global test
-  if 0 <= test and test <= 7:
-    pass
-  return True
+  if 0 <= test_XY and test_XY <= 7:
+    return True
 
 # This function sets up the ghost path. (later you can expand the ghost_path arrays using a text editor).
 def move_ghost():
@@ -57,15 +65,19 @@ def move_M():
   Mnew_x = Mx + newXY[0]
   Mnew_y = My + newXY[1]
   new_grid_no = Mnew_x + Mnew_y * 8
+  # read the LED value
   read_grid = Maze_field[int(new_grid_no - 1)]
   # test if CleanerMan has not collided with the ghost.
   # Check if the CleanerMan can
-  if ghost_position == read_grid:
+  if ghost_position == new_grid_no:
     sense.set_pixel(Mx,My,[0,0,0])   # (x,y,r,g,b)
     Mx = Mnew_x
     My = Mnew_y
-    sense.set_pixel(Mx,My,[255,0,255])   # (x,y,r,g,b)
-    sleep(1000/1000)
+    # if collided flash 10 times
+    for count2 in range(10):
+      sense.set_pixel(Mx,My,[255,0,255])   # (x,y,r,g,b)
+      sleep(500/1000)
+      sense.set_pixel(Mx,My,[0,0,0])   # (x,y,r,g,b)
   elif grid_move_ok == read_grid:
     sense.set_pixel(Mx,My,[0,0,0])   # (x,y,r,g,b)
     Mx = Mnew_x
@@ -95,7 +107,7 @@ def ghostXY(ghost_position):
   global multipleof8, test_forX, new_ghostX, new_ghostY
   for multipleof8 in range(0, 65, 8):
     test_forX = ghost_position - multipleof8
-    if test_XY_inside_grid(test_forX):
+    if test_XY_inside_grid(test_forX) == True:
       sense.set_pixel(new_ghostX,new_ghostY,[102,0,204])   # (x,y,r,g,b)
       new_ghostX = test_forX
       new_ghostY = multipleof8 / 8
@@ -107,7 +119,7 @@ def the_broom():
   global broom_x, broom_y, Mx, My, broom_grid_no, new_grid_no, read_grid, Maze_field, grid_move_ok, ghost_position
   for broom_x in range(-1, 2):
     for broom_y in range(-1, 2):
-      if test_XY_inside_grid(Mx + broom_x) and test_XY_inside_grid(My + broom_y):
+      if (test_XY_inside_grid(Mx + broom_x) and test_XY_inside_grid(My + broom_y)) == True:
         broom_grid_no = new_grid_no + (broom_x + 8 * broom_y)
         read_grid = Maze_field[int((broom_grid_no + 1) - 1)]
         if grid_move_ok == read_grid and ghost_position != read_grid:
