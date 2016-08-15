@@ -54,9 +54,9 @@ def move_ghost():
       ghost_path = ghost_path_02
     else:
       ghost_path = ghost_path_03
-  for i in ghost_path:
-    ghostXY(i)
-    sleep(500/1000)
+    for i in ghost_path:
+	 ghostXY(i)
+	 sleep(1000/1000)
 
 # Move CleanerMan within the confides of the maze with the arrow keys
 def move_M():
@@ -66,7 +66,7 @@ def move_M():
   Mnew_y = My + newXY[1]
   new_grid_no = Mnew_x + Mnew_y * 8
   # read the LED value
-  read_grid = Maze_field[int(new_grid_no - 1)]
+  read_grid = Maze_field[int(new_grid_no)]
   # test if CleanerMan has not collided with the ghost.
   # Check if the CleanerMan can
   if ghost_position == new_grid_no:
@@ -82,8 +82,9 @@ def move_M():
     sense.set_pixel(Mx,My,[0,0,0])   # (x,y,r,g,b)
     Mx = Mnew_x
     My = Mnew_y
-    sense.set_pixel(Mx,My,[255,255,0])   # (x,y,r,g,b)
     the_broom()
+    sense.set_pixel(Mx,My,[0,255,0])   # (x,y,r,g,b)
+    
 
 # listen to the key input, return X&Y for the CleanerMan
 def listen_for_key():
@@ -107,11 +108,13 @@ def ghostXY(ghost_position):
   global multipleof8, test_forX, new_ghostX, new_ghostY
   for multipleof8 in range(0, 65, 8):
     test_forX = ghost_position - multipleof8
+    
     if test_XY_inside_grid(test_forX) == True:
       sense.set_pixel(new_ghostX,new_ghostY,[102,0,204])   # (x,y,r,g,b)
       new_ghostX = test_forX
       new_ghostY = multipleof8 / 8
       sense.set_pixel(new_ghostX,new_ghostY,[255,0,0])   # (x,y,r,g,b)
+      #print(new_ghostX, new_ghostY)
       break
 
 # the broom forms an O around the CleanerMan. It will sweep away all the LEDs, except the walls.
@@ -123,14 +126,16 @@ def the_broom():
         broom_grid_no = new_grid_no + (broom_x + 8 * broom_y)
         read_grid = Maze_field[int((broom_grid_no + 1) - 1)]
         if grid_move_ok == read_grid and ghost_position != read_grid:
-          sense.set_pixel((Mx + broom_x),(My + broom_y),[162,0,70])   # (x,y,r,g,b)
+          sense.set_pixel((Mx + broom_x),(My + broom_y),[0,0,40])   # (x,y,r,g,b)
 
 
 # expand the paths in the python editr
-ghost_path_01 = [0, 1, 2, 3, 11, 19, 18, 17, 16, 8]
-ghost_path_02 = [0, 1, 2, 3, 2, 1]
-ghost_path_03 = [0, 8, 16, 17, 16, 8]
-new_ghostX = 0
+# arrays (these arrays were expanded later.)
+ghost_path_01 = [28,36,44,52,60,61,62,63,55,54,47,38,37,36,35,34,33,25,17,18,19,11,10,9,1,0,1,2,3,4,5,6,7,6,5,4,3,2,1,9,10,18,17,25,33,34,35,36]
+ghost_path_02 = [28,29,30,38,47,54,62,61,60,52,44,36,35,34,33,34,35,36]
+ghost_path_03 = [28,36,35,34,33,25,17,18,10,2,3,4,5,13,5,4,3,11,19,18,17,25,33,41,40,41,33,34,35,36]
+ 
+new_ghostX = 0 
 new_ghostY = 0
 grid_move_ok = [102, 0, 204]
 Mx = 0
@@ -159,3 +164,7 @@ screen.keypad(0)
 curses.nocbreak()
 curses.echo()
 curses.endwin()
+
+
+
+
