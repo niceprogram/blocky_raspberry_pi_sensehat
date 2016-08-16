@@ -8,7 +8,7 @@
     <statement name="STACK">
       <block type="controls_if" id="Bxgx/ylT31(.g3s6dnDB">
         <mutation elseif="1" else="1"></mutation>
-        <comment pinned="false" h="53.2081298828125" w="151.9625244140625">prepare a wrap the 8x8 grid</comment>
+        <comment pinned="false" h="53" w="151">prepare a wrap the 8x8 grid</comment>
         <value name="IF0">
           <block type="logic_compare" id="+-{BUJQWJL?~C[DD^1%_">
             <field name="OP">LTE</field>
@@ -136,7 +136,7 @@
                     <value name="VALUE">
                       <block type="led_field" id="PF4~r3`IR,e6S^fvB5?_">
                         <field name="r1">#000000</field>
-                        <field name="r2">#028200</field>
+                        <field name="r2">#000000</field>
                         <field name="r3">#000000</field>
                         <field name="r4">#000000</field>
                         <field name="r5">#000000</field>
@@ -145,7 +145,7 @@
                         <field name="r8">#000000</field>
                         <field name="r9">#000000</field>
                         <field name="r10">#028200</field>
-                        <field name="r11">#028200</field>
+                        <field name="r11">#000000</field>
                         <field name="r12">#000000</field>
                         <field name="r13">#000000</field>
                         <field name="r14">#000000</field>
@@ -172,23 +172,23 @@
                         <field name="r35">#000000</field>
                         <field name="r36">#000000</field>
                         <field name="r37">#000000</field>
-                        <field name="r38">#028200</field>
+                        <field name="r38">#000000</field>
                         <field name="r39">#000000</field>
                         <field name="r40">#000000</field>
                         <field name="r41">#000000</field>
                         <field name="r42">#000000</field>
                         <field name="r43">#000000</field>
                         <field name="r44">#000000</field>
-                        <field name="r45">#028200</field>
+                        <field name="r45">#000000</field>
                         <field name="r46">#000000</field>
-                        <field name="r47">#028200</field>
+                        <field name="r47">#000000</field>
                         <field name="r48">#000000</field>
                         <field name="r49">#000000</field>
                         <field name="r50">#000000</field>
                         <field name="r51">#000000</field>
                         <field name="r52">#000000</field>
                         <field name="r53">#000000</field>
-                        <field name="r54">#028200</field>
+                        <field name="r54">#000000</field>
                         <field name="r55">#000000</field>
                         <field name="r56">#000000</field>
                         <field name="r57">#000000</field>
@@ -206,7 +206,7 @@
                         <field name="VAR">count</field>
                         <value name="VALUE">
                           <block type="math_number" id="L/TIy{}Z@3c-N4`dfDx%">
-                            <field name="NUM">1</field>
+                            <field name="NUM">0</field>
                           </block>
                         </value>
                         <next>
@@ -267,8 +267,21 @@
                                       </block>
                                     </value>
                                     <value name="AT">
-                                      <block type="variables_get" id="75*W+V_mem5iwSjVRE9]">
-                                        <field name="VAR">count</field>
+                                      <block type="math_arithmetic" id="/y!~6|D0O}A9XDEilAcN">
+                                        <field name="OP">ADD</field>
+                                        <value name="A">
+                                          <shadow type="math_number" id="B1L-1y_wG(@DQwRo35qS">
+                                            <field name="NUM">1</field>
+                                          </shadow>
+                                          <block type="variables_get" id="75*W+V_mem5iwSjVRE9]">
+                                            <field name="VAR">count</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <shadow type="math_number" id="0B8-Km9.`jq7ZfK:(o]B">
+                                            <field name="NUM">1</field>
+                                          </shadow>
+                                        </value>
                                       </block>
                                     </value>
                                     <value name="TO">
@@ -312,7 +325,7 @@
                                 </value>
                                 <next>
                                   <block type="variables_set" id="fd5X,!#l8{ZMUJn0zKo;">
-                                    <field name="VAR">count</field>
+                                    <field name="VAR">cell_number</field>
                                     <value name="VALUE">
                                       <block type="math_number" id="{):)VnpetS~G2OmM)RXc">
                                         <field name="NUM">0</field>
@@ -351,7 +364,7 @@
                                                 </mutation>
                                                 <value name="ARG0">
                                                   <block type="variables_get" id="kTj6:[h{%8!]}DG_FbIT">
-                                                    <field name="VAR">count</field>
+                                                    <field name="VAR">cell_number</field>
                                                   </block>
                                                 </value>
                                                 <next>
@@ -378,7 +391,7 @@
                                             </statement>
                                             <next>
                                               <block type="variables_set" id="m_4hClx;S;Q#Sq`]swV~">
-                                                <field name="VAR">count</field>
+                                                <field name="VAR">cell_number</field>
                                                 <value name="VALUE">
                                                   <block type="math_arithmetic" id=")|4|Eh=Y+83v3fzLn6.J">
                                                     <field name="OP">ADD</field>
@@ -387,7 +400,7 @@
                                                         <field name="NUM">1</field>
                                                       </shadow>
                                                       <block type="variables_get" id="7tVSSNUMf630U}Tkbmd,">
-                                                        <field name="VAR">count</field>
+                                                        <field name="VAR">cell_number</field>
                                                       </block>
                                                     </value>
                                                     <value name="B">
@@ -475,7 +488,7 @@
       <arg name="life_field_number"></arg>
     </mutation>
     <field name="NAME">life_number_2_xy_position</field>
-    <comment pinned="true" h="42.491424560546875" w="292.61962890625">convert cell position number to XY</comment>
+    <comment pinned="true" h="42" w="292">convert cell position number to XY</comment>
     <statement name="STACK">
       <block type="controls_for" id="1~FJT9gg(H?@gW|To+w|">
         <field name="VAR">multiple_of_8</field>
@@ -486,7 +499,7 @@
         </value>
         <value name="TO">
           <shadow type="math_number" id="I^zNhxVUNPrl@~X}:4nz">
-            <field name="NUM">64</field>
+            <field name="NUM">63</field>
           </shadow>
         </value>
         <value name="BY">
@@ -568,7 +581,7 @@
                         <field name="VAR">tempYcell</field>
                         <value name="VALUE">
                           <block type="math_arithmetic" id="V6I]xmWcjZr5(GOj]rG.">
-                            <field name="OP">MULTIPLY</field>
+                            <field name="OP">DIVIDE</field>
                             <value name="A">
                               <shadow id="]H-=,n!-Qf3.;pf1D/E!" type="math_number">
                                 <field name="NUM">1</field>
@@ -602,7 +615,7 @@
   </block>
   <block type="procedures_defreturn" id="pCrw9G`t(Ug[p2y}MD.x" x="2037" y="187">
     <field name="NAME">test_Each_cell</field>
-    <comment pinned="false" h="92.05633544921875" w="196.1690673828125">All nine neighboring cells are checked for the presence of a live neighbour</comment>
+    <comment pinned="false" h="92" w="196">All nine neighboring cells are checked for the presence of a live neighbour</comment>
     <statement name="STACK">
       <block type="variables_set" id=")2]8ZggWR^!]={p6@=Sv">
         <field name="VAR">count_amount_of_live_cells</field>
@@ -626,7 +639,7 @@
                 </value>
                 <value name="ADD1">
                   <block type="variables_get" id=";St=ZpGHkJIrm)vNh,2|">
-                    <field name="VAR">count</field>
+                    <field name="VAR">cell_number</field>
                   </block>
                 </value>
               </block>
@@ -743,34 +756,47 @@
                                           </block>
                                         </value>
                                         <value name="AT">
-                                          <block type="procedures_callreturn" id="W)m[i/g~:5Syc;l4H~Q]">
-                                            <mutation name="life_xy_position_number">
-                                              <arg name="x"></arg>
-                                              <arg name="y"></arg>
-                                            </mutation>
-                                            <value name="ARG0">
-                                              <block type="procedures_callreturn" id="g+9A__fxcL2FNUOPX}7*">
-                                                <mutation name="wrap8x8">
-                                                  <arg name="wrap_cell"></arg>
+                                          <block type="math_arithmetic" id="8C=wkXa+e?s;{Ct}#EMy">
+                                            <field name="OP">ADD</field>
+                                            <value name="A">
+                                              <shadow type="math_number" id="XB2BZ6~df`7v.]T8b#HU">
+                                                <field name="NUM">1</field>
+                                              </shadow>
+                                              <block type="procedures_callreturn" id="W)m[i/g~:5Syc;l4H~Q]">
+                                                <mutation name="life_xy_position_number">
+                                                  <arg name="x"></arg>
+                                                  <arg name="y"></arg>
                                                 </mutation>
                                                 <value name="ARG0">
-                                                  <block type="variables_get" id="QFr_6P^qLxwC{l]T~=E{">
-                                                    <field name="VAR">Cell_X</field>
+                                                  <block type="procedures_callreturn" id="g+9A__fxcL2FNUOPX}7*">
+                                                    <mutation name="wrap8x8">
+                                                      <arg name="wrap_cell"></arg>
+                                                    </mutation>
+                                                    <value name="ARG0">
+                                                      <block type="variables_get" id="QFr_6P^qLxwC{l]T~=E{">
+                                                        <field name="VAR">Cell_X</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <value name="ARG1">
+                                                  <block type="procedures_callreturn" id="#5z7=+2u8hECg]PQQ*/6">
+                                                    <mutation name="wrap8x8">
+                                                      <arg name="wrap_cell"></arg>
+                                                    </mutation>
+                                                    <value name="ARG0">
+                                                      <block type="variables_get" id="^87G-,b1:RBodHGaZpm9">
+                                                        <field name="VAR">Cell_Y</field>
+                                                      </block>
+                                                    </value>
                                                   </block>
                                                 </value>
                                               </block>
                                             </value>
-                                            <value name="ARG1">
-                                              <block type="procedures_callreturn" id="#5z7=+2u8hECg]PQQ*/6">
-                                                <mutation name="wrap8x8">
-                                                  <arg name="wrap_cell"></arg>
-                                                </mutation>
-                                                <value name="ARG0">
-                                                  <block type="variables_get" id="^87G-,b1:RBodHGaZpm9">
-                                                    <field name="VAR">Cell_Y</field>
-                                                  </block>
-                                                </value>
-                                              </block>
+                                            <value name="B">
+                                              <shadow type="math_number" id="yerHuj^j86g|/tmE:u*D">
+                                                <field name="NUM">1</field>
+                                              </shadow>
                                             </value>
                                           </block>
                                         </value>
@@ -788,22 +814,101 @@
                                         <mutation items="6"></mutation>
                                         <value name="ADD0">
                                           <block type="text" id="t5}A[2jqj8F/CBfDGZal">
-                                            <field name="TEXT">cellX</field>
+                                            <field name="TEXT">cell_number</field>
                                           </block>
                                         </value>
                                         <value name="ADD1">
-                                          <block type="variables_get" id="zzXduR.=yBS#SV@eFq_I">
-                                            <field name="VAR">Cell_X</field>
+                                          <block type="procedures_callreturn" id="Gp{M=|cedPrIFQt6(Wda">
+                                            <mutation name="life_xy_position_number">
+                                              <arg name="x"></arg>
+                                              <arg name="y"></arg>
+                                            </mutation>
+                                            <value name="ARG0">
+                                              <block type="procedures_callreturn" id="9*G}#N#kW(w8#Bl=6AM)">
+                                                <mutation name="wrap8x8">
+                                                  <arg name="wrap_cell"></arg>
+                                                </mutation>
+                                                <value name="ARG0">
+                                                  <block type="variables_get" id="_svDk9X5[@m%|y:3OHdf">
+                                                    <field name="VAR">Cell_X</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
+                                            <value name="ARG1">
+                                              <block type="procedures_callreturn" id="EM:u+Y75ReC=jTr-Rals">
+                                                <mutation name="wrap8x8">
+                                                  <arg name="wrap_cell"></arg>
+                                                </mutation>
+                                                <value name="ARG0">
+                                                  <block type="variables_get" id="bckw4+mJEzO~_5{|(w3M">
+                                                    <field name="VAR">Cell_Y</field>
+                                                  </block>
+                                                </value>
+                                              </block>
+                                            </value>
                                           </block>
                                         </value>
                                         <value name="ADD2">
                                           <block type="text" id="l.]:Cnk*cQi7zpDj@VZ4">
-                                            <field name="TEXT">cellY</field>
+                                            <field name="TEXT">cell value</field>
                                           </block>
                                         </value>
                                         <value name="ADD3">
-                                          <block type="variables_get" id="y?:,a`:yJR2OQRLdh2f.">
-                                            <field name="VAR">Cell_Y</field>
+                                          <block type="lists_getIndex" id="X,:WJNlC@U5imuQT{I+0">
+                                            <mutation statement="false" at="true"></mutation>
+                                            <field name="MODE">GET</field>
+                                            <field name="WHERE">FROM_START</field>
+                                            <value name="VALUE">
+                                              <block type="variables_get" id="G+m?/Vp7K[=J415:/QYR">
+                                                <field name="VAR">life_list</field>
+                                              </block>
+                                            </value>
+                                            <value name="AT">
+                                              <block type="math_arithmetic" id="-3{kooGg~r[yWAX|`4|^">
+                                                <field name="OP">ADD</field>
+                                                <value name="A">
+                                                  <shadow type="math_number" id="XB2BZ6~df`7v.]T8b#HU">
+                                                    <field name="NUM">1</field>
+                                                  </shadow>
+                                                  <block type="procedures_callreturn" id="r0.SBw1,kDs,8v.-RPj]">
+                                                    <mutation name="life_xy_position_number">
+                                                      <arg name="x"></arg>
+                                                      <arg name="y"></arg>
+                                                    </mutation>
+                                                    <value name="ARG0">
+                                                      <block type="procedures_callreturn" id="o{Z5hgJ+,W#RU[9YX]T=">
+                                                        <mutation name="wrap8x8">
+                                                          <arg name="wrap_cell"></arg>
+                                                        </mutation>
+                                                        <value name="ARG0">
+                                                          <block type="variables_get" id="*bOzC[@^@Buko|gnFbUL">
+                                                            <field name="VAR">Cell_X</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <value name="ARG1">
+                                                      <block type="procedures_callreturn" id="Hk;vPZA1wbAte!h18**H">
+                                                        <mutation name="wrap8x8">
+                                                          <arg name="wrap_cell"></arg>
+                                                        </mutation>
+                                                        <value name="ARG0">
+                                                          <block type="variables_get" id="Dt_h4c|8!|smW;_*6tcT">
+                                                            <field name="VAR">Cell_Y</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                  </block>
+                                                </value>
+                                                <value name="B">
+                                                  <shadow type="math_number" id="tne%;amJ?mNHDCnM!r2|">
+                                                    <field name="NUM">1</field>
+                                                  </shadow>
+                                                </value>
+                                              </block>
+                                            </value>
                                           </block>
                                         </value>
                                         <value name="ADD4">
@@ -912,13 +1017,13 @@
       </block>
     </value>
   </block>
-  <block type="procedures_defreturn" id="ja}{q`9w^aNTs=1Bzj53" x="838" y="538">
+  <block type="procedures_defreturn" id="ja}{q`9w^aNTs=1Bzj53" x="937" y="538">
     <mutation>
       <arg name="x"></arg>
       <arg name="y"></arg>
     </mutation>
     <field name="NAME">life_xy_position_number</field>
-    <comment pinned="true" h="55.8873291015625" w="280.5633544921875">convert XY position to number</comment>
+    <comment pinned="true" h="55" w="280">convert XY position to number</comment>
     <statement name="STACK">
       <block type="variables_set" id="csti6;H!C|f9OS.Wx^F-">
         <field name="VAR">life_position_number</field>
