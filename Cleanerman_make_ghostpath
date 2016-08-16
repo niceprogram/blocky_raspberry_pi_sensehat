@@ -1,0 +1,111 @@
+from sense_hat import SenseHat
+sense = SenseHat()
+
+import curses
+screen = curses.initscr()
+screen.keypad(True)
+curses.cbreak()
+curses.noecho()
+
+ghost_path_01 = None
+test_XY = None
+ghost_position = None
+ghost_path_02 = None
+newXY = None
+multipleof8 = None
+tempXY = None
+broom_x = None
+ghost_path_03 = None
+choose_ghost_route = None
+Mnew_x = None
+test_forX = None
+key = None
+tempX = None
+broom_y = None
+new_ghostX = None
+Mnew_y = None
+tempY = None
+new_ghostY = None
+ghost_path = None
+i = None
+Mx = None
+new_grid_no = None
+broom_grid_no = None
+grid_move_ok = None
+My = None
+read_grid = None
+Maze_field = None
+
+# test is number are between 0 and 7
+def test_XY_inside_grid(test_XY):
+  if 0 <= test_XY and test_XY <= 7:
+    return True
+
+# listen to the key input, return X&Y for the CleanerMan
+def listen_for_key():
+  global key, tempX, tempY, Mx, My, tempXY
+  key = screen.getch()
+  tempX = 0
+  tempY = 0
+  if Mx != 0 and key == curses.KEY_LEFT:
+    tempX = -1
+  elif Mx != 7 and key == curses.KEY_RIGHT:
+    tempX = 1
+  elif My != 0 and key == curses.KEY_UP:
+    tempY = -1
+  elif My != 7 and key == curses.KEY_DOWN:
+    tempY = 1
+  tempXY = [tempX, tempY]
+  return tempXY
+
+# Move CleanerMan within the confides of the maze with the arrow keys
+def move_M2():
+  global newXY, Mnew_x, Mx, Mnew_y, My, new_grid_no, read_grid, Maze_field, grid_move_ok
+  newXY = listen_for_key()
+  Mnew_x = Mx + newXY[0]
+  Mnew_y = My + newXY[1]
+  new_grid_no = Mnew_x + Mnew_y * 8
+  # read the LED value
+  # +1 compensate Blockly list
+  read_grid = Maze_field[int((new_grid_no + 1) - 1)]
+  # test for position
+  print(str(',') + str(new_grid_no))
+  # test if CleanerMan has not collided with the ghost.
+  # Check if the CleanerMan can
+  if grid_move_ok == read_grid:
+    sense.set_pixel(Mx,My,[0,0,0])   # (x,y,r,g,b)
+    Mx = Mnew_x
+    My = Mnew_y
+    sense.set_pixel(Mx,My,[255,255,0])   # (x,y,r,g,b)
+
+
+# expand the paths in the python editr
+ghost_path_01 = [0, 1, 2, 3, 11, 19, 18, 17, 16, 8]
+ghost_path_02 = [0, 1, 2, 3, 2, 1]
+ghost_path_03 = [0, 8, 16, 17, 16, 8]
+new_ghostX = 0
+new_ghostY = 0
+grid_move_ok = [102, 0, 204]
+Mx = 0
+My = 0
+Mnew_x = 0
+Mnew_y = 0
+Maze_field = [[102,0,204], [102,0,204], [102,0,204], [102,0,204], [2,130,0], [102,0,204], [102,0,204], [102,0,204],
+ [102,0,204], [2,130,0], [2,130,0], [102,0,204], [102,0,204], [102,0,204], [2,130,0], [102,0,204],
+ [102,0,204], [102,0,204], [102,0,204], [102,0,204], [2,130,0], [102,0,204], [102,0,204], [102,0,204],
+ [2,130,0], [2,130,0], [2,130,0], [102,0,204], [2,130,0], [102,0,204], [2,130,0], [102,0,204],
+ [102,0,204], [102,0,204], [102,0,204], [102,0,204], [2,130,0], [102,0,204], [2,130,0], [2,130,0],
+ [102,0,204], [2,130,0], [102,0,204], [2,130,0], [2,130,0], [102,0,204], [102,0,204], [102,0,204],
+ [102,0,204], [2,130,0], [102,0,204], [102,0,204], [102,0,204], [102,0,204], [2,130,0], [102,0,204],
+ [102,0,204], [102,0,204], [102,0,204], [2,130,0], [102,0,204], [102,0,204], [102,0,204], [102,0,204]]
+
+sense.set_pixels(Maze_field)   # [[r,g,b], [r,g,b],...]
+sense.set_pixel(Mx,My,[255,255,0])   # (x,y,r,g,b)
+while True:
+  move_M2()
+
+
+screen.keypad(0)
+curses.nocbreak()
+curses.echo()
+curses.endwin()
