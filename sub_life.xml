@@ -1,7 +1,7 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="procedures_defnoreturn" id="lK`kj[dsvtn2d1,s+NJ," x="-1288" y="-487">
+  <block type="procedures_defnoreturn" id="lK`kj[dsvtn2d1,s+NJ," x="-2212" y="-962">
     <field name="NAME">make_new_seeds</field>
-    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <comment pinned="false" h="80" w="160">Make a random list of seeds</comment>
     <statement name="STACK">
       <block type="variables_set" id="IvkKPSAUfoF~#Cun}HU`">
         <field name="VAR">j</field>
@@ -61,113 +61,26 @@
                   </block>
                 </value>
                 <next>
-                  <block type="procedures_callnoreturn" id="1k/}{Ztz0l4,KF3|vqTW">
-                    <mutation name="life_number_2_xy_position">
-                      <arg name="life_field_number"></arg>
-                    </mutation>
-                    <value name="ARG0">
-                      <block type="variables_get" id="tXsC5_-k~##==k1xqBa3">
-                        <field name="VAR">j</field>
-                      </block>
-                    </value>
-                    <next>
-                      <block type="controls_if" id="/GBJ!6UvZDbKKkqf^nA,">
-                        <mutation else="1"></mutation>
-                        <value name="IF0">
-                          <block type="logic_compare" id="|eO.tV#fOXxYc!295=DZ">
-                            <field name="OP">EQ</field>
-                            <value name="A">
-                              <block type="lists_getIndex" id="F?[2y0njQ/r1m+IzbFc`">
-                                <mutation statement="false" at="true"></mutation>
-                                <field name="MODE">GET</field>
-                                <field name="WHERE">FROM_START</field>
-                                <value name="VALUE">
-                                  <block type="variables_get" id="6:G687V~qoqj3uy/|UA,">
-                                    <field name="VAR">new_seeds</field>
-                                  </block>
-                                </value>
-                                <value name="AT">
-                                  <block type="math_arithmetic" id="Dh?m?IP}M88f{(xa%k)!">
-                                    <field name="OP">ADD</field>
-                                    <value name="A">
-                                      <shadow type="math_number" id="1=n`jt{I}W`XS]-m@lFN">
-                                        <field name="NUM">1</field>
-                                      </shadow>
-                                      <block type="variables_get" id="r;bJ_.)+TZGu]+Cwx!;2">
-                                        <field name="VAR">j</field>
-                                      </block>
-                                    </value>
-                                    <value name="B">
-                                      <shadow type="math_number" id="l.s5{W!-[{),RyavwRTK">
-                                        <field name="NUM">1</field>
-                                      </shadow>
-                                    </value>
-                                  </block>
-                                </value>
-                              </block>
-                            </value>
-                            <value name="B">
-                              <block type="math_number" id="c{REbnoL#2RE(6]ao{Nf">
-                                <field name="NUM">1</field>
-                              </block>
-                            </value>
+                  <block type="variables_set" id="LOVyYp_}xPckka],@(L0">
+                    <field name="VAR">j</field>
+                    <value name="VALUE">
+                      <block type="math_arithmetic" id="`*Md+h-0*nedt#{Ad!3N">
+                        <field name="OP">ADD</field>
+                        <value name="A">
+                          <shadow type="math_number" id="IiFm)hZ9xtj_{:#g[Gnz">
+                            <field name="NUM">1</field>
+                          </shadow>
+                          <block type="variables_get" id="~+gut8Jv1yfv{v,t0DMU">
+                            <field name="VAR">j</field>
                           </block>
                         </value>
-                        <statement name="DO0">
-                          <block type="set_pixel" id="36X9?8Sxl6W89yOt@B%:">
-                            <field name="colour">#ff0000</field>
-                            <value name="_X">
-                              <block type="variables_get" id="h~ez-dlV@sosM{uGWGCG">
-                                <field name="VAR">Cell_X</field>
-                              </block>
-                            </value>
-                            <value name="_Y">
-                              <block type="variables_get" id="i)X/QB{PUst2w?6LmDI0">
-                                <field name="VAR">Cell_Y</field>
-                              </block>
-                            </value>
-                          </block>
-                        </statement>
-                        <statement name="ELSE">
-                          <block type="set_pixel" id="-4r!R/wPavUO2}R{PJ!D">
-                            <field name="colour">#ff6666</field>
-                            <value name="_X">
-                              <block type="variables_get" id="t9dv^N3]XLiC,6T9y8VB">
-                                <field name="VAR">Cell_X</field>
-                              </block>
-                            </value>
-                            <value name="_Y">
-                              <block type="variables_get" id="@.vcX+Uw]yqR=(zg_s_.">
-                                <field name="VAR">Cell_Y</field>
-                              </block>
-                            </value>
-                          </block>
-                        </statement>
-                        <next>
-                          <block type="variables_set" id="LOVyYp_}xPckka],@(L0">
-                            <field name="VAR">j</field>
-                            <value name="VALUE">
-                              <block type="math_arithmetic" id="`*Md+h-0*nedt#{Ad!3N">
-                                <field name="OP">ADD</field>
-                                <value name="A">
-                                  <shadow type="math_number" id="IiFm)hZ9xtj_{:#g[Gnz">
-                                    <field name="NUM">1</field>
-                                  </shadow>
-                                  <block type="variables_get" id="~+gut8Jv1yfv{v,t0DMU">
-                                    <field name="VAR">j</field>
-                                  </block>
-                                </value>
-                                <value name="B">
-                                  <shadow type="math_number" id=")e~{Eg2O!?C1Cg^NBpSQ">
-                                    <field name="NUM">1</field>
-                                  </shadow>
-                                </value>
-                              </block>
-                            </value>
-                          </block>
-                        </next>
+                        <value name="B">
+                          <shadow type="math_number" id=")e~{Eg2O!?C1Cg^NBpSQ">
+                            <field name="NUM">1</field>
+                          </shadow>
+                        </value>
                       </block>
-                    </next>
+                    </value>
                   </block>
                 </next>
               </block>
@@ -189,7 +102,222 @@
       </block>
     </statement>
   </block>
-  <block type="procedures_defnoreturn" id="xO1M}tW2seO}{2alV4eE" x="-538" y="-413">
+  <block type="procedures_defnoreturn" id="i!TbactG+=PaF]7g8x~#" x="-2213" y="-687">
+    <field name="NAME">reduce_seeds</field>
+    <comment pinned="false" h="80" w="160">Reduce the number of seeds using a factor temperature and humidity</comment>
+    <statement name="STACK">
+      <block type="variables_set" id="b}`Zg1yRjD5WPtnA;P)d">
+        <field name="VAR">temperature</field>
+        <value name="VALUE">
+          <block type="get_temperature" id="xmSoV!~^Oq/B@f#E%ANQ"></block>
+        </value>
+        <next>
+          <block type="controls_if" id="}n44`9/@[t9{eDz4(@qD">
+            <mutation else="1"></mutation>
+            <value name="IF0">
+              <block type="logic_operation" id="Y*ZT4x~NgXaI_bLL4xX[">
+                <field name="OP">AND</field>
+                <value name="A">
+                  <block type="logic_compare" id="6bsIaLJc|+eCy/0e*vOv">
+                    <field name="OP">LT</field>
+                    <value name="A">
+                      <block type="math_number" id="iG1}?8vnbIo%%GD}r.WN">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="variables_get" id="+qmy*7q(Fi!zK`E/J56c">
+                        <field name="VAR">temperature</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <value name="B">
+                  <block type="logic_compare" id=")l2#]Nz8)L!G.#:m+y|H">
+                    <field name="OP">LT</field>
+                    <value name="A">
+                      <block type="variables_get" id="DxCV+Rmi9{Z:vb?XokH{">
+                        <field name="VAR">temperature</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="math_number" id="!EQyUuVLkgdBAj))d/Kh">
+                        <field name="NUM">50</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="variables_set" id="IkMwR978q3?tB?.,7;8~">
+                <field name="VAR">temp_amount_of_seeds</field>
+                <value name="VALUE">
+                  <block type="math_number" id="7~ghADrE^kP@^/#41dR;">
+                    <field name="NUM">5</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="controls_whileUntil" id="%.hg5yOOngZ9wfMzQ#!Y">
+                    <field name="MODE">WHILE</field>
+                    <value name="BOOL">
+                      <block type="logic_boolean" id="xACXJg.}Re)?f_Xzo68k">
+                        <field name="BOOL">TRUE</field>
+                      </block>
+                    </value>
+                    <statement name="DO">
+                      <block type="variables_set" id="!:7?/:hX#JYH`Pn/B/k3">
+                        <field name="VAR">amount_of_new_seeds</field>
+                        <value name="VALUE">
+                          <block type="math_number" id="wK6q~PEns}fh,HFXGrn]">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="controls_forEach" id="S?AGbZH4oNzc%a1u+6].">
+                            <field name="VAR">m</field>
+                            <value name="LIST">
+                              <block type="variables_get" id="#NIs+mtY3g{QBnNfSv?2">
+                                <field name="VAR">new_seeds</field>
+                              </block>
+                            </value>
+                            <statement name="DO">
+                              <block type="variables_set" id="?I`r@N2*b;y7CssOm7:0">
+                                <field name="VAR">amount_of_new_seeds</field>
+                                <value name="VALUE">
+                                  <block type="math_arithmetic" id="?oFKWV%,SIo@VmLZc#rX">
+                                    <field name="OP">ADD</field>
+                                    <value name="A">
+                                      <shadow type="math_number" id="|aO!n4LeVbJrg%~fA|tg">
+                                        <field name="NUM">1</field>
+                                      </shadow>
+                                      <block type="variables_get" id="|egv_uA~?K[sJS@QUWl2">
+                                        <field name="VAR">amount_of_new_seeds</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <shadow type="math_number" id="etvdaS]Rjbkgo%HunQcL">
+                                        <field name="NUM">1</field>
+                                      </shadow>
+                                      <block type="variables_get" id="fy3{]Us;kqG#Q9dFpu{u">
+                                        <field name="VAR">m</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                              </block>
+                            </statement>
+                            <next>
+                              <block type="controls_if" id="(DooNCpDFjg^dn]*8wl_">
+                                <mutation else="1"></mutation>
+                                <value name="IF0">
+                                  <block type="logic_compare" id="A}EVimsZH;`6sy{k`v0~">
+                                    <field name="OP">GTE</field>
+                                    <value name="A">
+                                      <block type="variables_get" id="(;PFU5#uIFSB2jF.4y*z">
+                                        <field name="VAR">amount_of_new_seeds</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="variables_get" id="/y]Iw!vs/~o@Gcu{3+/t">
+                                        <field name="VAR">temperature</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <statement name="DO0">
+                                  <block type="lists_setIndex" id="oNbqQ{KbB7,_xdRg?;^a">
+                                    <mutation at="true"></mutation>
+                                    <field name="MODE">SET</field>
+                                    <field name="WHERE">FROM_START</field>
+                                    <value name="LIST">
+                                      <block type="variables_get" id="*HkaL=`m_VGPdE,En%b`">
+                                        <field name="VAR">new_seeds</field>
+                                      </block>
+                                    </value>
+                                    <value name="AT">
+                                      <block type="math_random_int" id="x^M0CEvZSS.-x39cgp#K">
+                                        <value name="FROM">
+                                          <shadow type="math_number" id="2H;y:;Fe!2YVV[|qe6`V">
+                                            <field name="NUM">0</field>
+                                          </shadow>
+                                        </value>
+                                        <value name="TO">
+                                          <shadow type="math_number" id="cXZnzj3h~)w/uXCYPn(V">
+                                            <field name="NUM">64</field>
+                                          </shadow>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="TO">
+                                      <block type="math_number" id="H`4i-r@X,D6hv;dm*FiJ">
+                                        <field name="NUM">0</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="text_print" id="Z-hxsxli|1Pr!S{6rnWq">
+                                        <value name="TEXT">
+                                          <shadow type="text" id="a[UyO)YBZVa~I6|xWNod">
+                                            <field name="TEXT">abc</field>
+                                          </shadow>
+                                          <block type="text_join" id="70=?b3HM*`k),#g)#FP/">
+                                            <mutation items="2"></mutation>
+                                            <value name="ADD0">
+                                              <block type="text" id="JvVM-d`%dJ7`5E1Imbrt">
+                                                <field name="TEXT">amount of seeds</field>
+                                              </block>
+                                            </value>
+                                            <value name="ADD1">
+                                              <block type="variables_get" id="ZsLa-Rf;Ng5UUci:2,T9">
+                                                <field name="VAR">amount_of_new_seeds</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </statement>
+                                <statement name="ELSE">
+                                  <block type="controls_flow_statements" id=")-fs)ZOW4-(^=K`8jbt?">
+                                    <field name="FLOW">BREAK</field>
+                                  </block>
+                                </statement>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <statement name="ELSE">
+              <block type="variables_set" id="{;=#PL#-i0#)q5+6vBQW">
+                <field name="VAR">new_seeds</field>
+                <value name="VALUE">
+                  <block type="lists_repeat" id="9J%k#5kkMRQ15_B-D!`8">
+                    <value name="ITEM">
+                      <block type="math_number" id="hvS:e,`jVR)CV2~Pu287">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <value name="NUM">
+                      <shadow type="math_number" id="AnEIh~Otr@;(:5OlT~MJ">
+                        <field name="NUM">64</field>
+                      </shadow>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" id="xO1M}tW2seO}{2alV4eE" x="-513" y="-612">
     <mutation>
       <arg name="life_field_number"></arg>
     </mutation>
@@ -319,107 +447,7 @@
       </block>
     </statement>
   </block>
-  <block type="procedures_defreturn" id="YaDcfPWQ|4:7Z-?Ee=K." disabled="true" x="313" y="-112">
-    <field name="NAME">make_seeds</field>
-    <comment pinned="false" h="105" w="362">An ideal humidity is 50-70 and the
-temperature 18-26 (minus the Pi temperature) for cell growth.
-If the humidity and temperature are in a favorable range we will make lots of seeds
-    </comment>
-    <statement name="STACK">
-      <block type="variables_set" id="b}`Zg1yRjD5WPtnA;P)d">
-        <field name="VAR">temperature</field>
-        <value name="VALUE">
-          <block type="get_temperature" id="xmSoV!~^Oq/B@f#E%ANQ"></block>
-        </value>
-        <next>
-          <block type="variables_set" id="x([A?2Bjm=B_[jbBNh]t">
-            <field name="VAR">humidity</field>
-            <value name="VALUE">
-              <block type="get_humidity" id="w)AF4.H@rxF24[!_uXy;"></block>
-            </value>
-            <next>
-              <block type="controls_if" id="}n44`9/@[t9{eDz4(@qD">
-                <mutation else="1"></mutation>
-                <value name="IF0">
-                  <block type="logic_operation" id="Y*ZT4x~NgXaI_bLL4xX[">
-                    <field name="OP">AND</field>
-                    <value name="A">
-                      <block type="logic_compare" id="6bsIaLJc|+eCy/0e*vOv">
-                        <field name="OP">LT</field>
-                        <value name="A">
-                          <block type="math_number" id="iG1}?8vnbIo%%GD}r.WN">
-                            <field name="NUM">10</field>
-                          </block>
-                        </value>
-                        <value name="B">
-                          <block type="variables_get" id="+qmy*7q(Fi!zK`E/J56c">
-                            <field name="VAR">temperature</field>
-                          </block>
-                        </value>
-                      </block>
-                    </value>
-                    <value name="B">
-                      <block type="logic_compare" id=")l2#]Nz8)L!G.#:m+y|H">
-                        <field name="OP">LT</field>
-                        <value name="A">
-                          <block type="variables_get" id="DxCV+Rmi9{Z:vb?XokH{">
-                            <field name="VAR">temperature</field>
-                          </block>
-                        </value>
-                        <value name="B">
-                          <block type="math_number" id="!EQyUuVLkgdBAj))d/Kh">
-                            <field name="NUM">30</field>
-                          </block>
-                        </value>
-                      </block>
-                    </value>
-                  </block>
-                </value>
-                <statement name="DO0">
-                  <block type="variables_set" id="L1~#.3uq^axjZ9;w#M?D">
-                    <field name="VAR">temp_amount_of_seeds</field>
-                    <value name="VALUE">
-                      <block type="math_arithmetic" id="M;Dh.7?1o=kiEsTT2RF0">
-                        <field name="OP">ADD</field>
-                        <value name="A">
-                          <shadow type="math_number" id="L?Z3)XelaEJLpT7~!f?:">
-                            <field name="NUM">1</field>
-                          </shadow>
-                          <block type="variables_get" id="{{[.HMr+V[J}]|.XfL6J">
-                            <field name="VAR">temp_amount_of_seeds</field>
-                          </block>
-                        </value>
-                        <value name="B">
-                          <shadow type="math_number" id="d7x#xmMD6tcy6GtnWKcO">
-                            <field name="NUM">1</field>
-                          </shadow>
-                        </value>
-                      </block>
-                    </value>
-                  </block>
-                </statement>
-                <statement name="ELSE">
-                  <block type="text_print" id=".C,3]J].I)]JP[}9#s3}">
-                    <value name="TEXT">
-                      <shadow type="text" id="hOKyyvD{znp*IU6Ny_-q">
-                        <field name="TEXT">abc</field>
-                      </shadow>
-                    </value>
-                  </block>
-                </statement>
-              </block>
-            </next>
-          </block>
-        </next>
-      </block>
-    </statement>
-    <value name="RETURN">
-      <block type="variables_get" id="}IU{*/K@qwdne]@_EoVN">
-        <field name="VAR">new_seeds</field>
-      </block>
-    </value>
-  </block>
-  <block type="variables_set" id="SC4t.lR?~50)o-I%|OeI" x="-512" y="12">
+  <block type="variables_set" id="SC4t.lR?~50)o-I%|OeI" x="-1237" y="-163">
     <field name="VAR">new_seeds</field>
     <value name="VALUE">
       <block type="lists_repeat" id="JadjU0f_H-~]!64NUmYE">
@@ -430,45 +458,153 @@ If the humidity and temperature are in a favorable range we will make lots of se
         </value>
         <value name="NUM">
           <shadow type="math_number" id="h[TXhgN|ddz.3(+z0~gb">
-            <field name="NUM">63</field>
+            <field name="NUM">64</field>
           </shadow>
         </value>
       </block>
     </value>
     <next>
-      <block type="procedures_callnoreturn" id="@om^Z5~*k8jtluuRlzml">
-        <mutation name="make_new_seeds"></mutation>
-        <next>
-          <block type="variables_set" id="7F(DnHEsfmfYkUzQJ/rZ" disabled="true">
-            <field name="VAR">amount_of_new_seeds</field>
-            <value name="VALUE">
-              <block type="math_random_int" id="TX=?Zu6g+f6MiS93HoHz">
-                <value name="FROM">
-                  <shadow type="math_number" id="poLF|7EPYe3A~.kv2.nh">
-                    <field name="NUM">10</field>
-                  </shadow>
-                </value>
-                <value name="TO">
-                  <shadow type="math_number" id="3-rNx95iDNN5ft9EYtD-">
-                    <field name="NUM">30</field>
-                  </shadow>
-                </value>
-              </block>
-            </value>
+      <block type="controls_repeat_ext" id="O6sxn4S%m9+Y@fN4Yh%Z">
+        <value name="TIMES">
+          <shadow type="math_number" id="}:4!Kq[M^mR12x#-}=9k">
+            <field name="NUM">100</field>
+          </shadow>
+        </value>
+        <statement name="DO">
+          <block type="procedures_callnoreturn" id="@om^Z5~*k8jtluuRlzml">
+            <mutation name="make_new_seeds"></mutation>
             <next>
-              <block type="variables_set" id="iCdpPw3p1`8z0oZEi~Vq" disabled="true">
-                <field name="VAR">amount_of_new_seeds</field>
-                <value name="VALUE">
-                  <block type="math_number" id="C:qJn)UO+O;!amW:MI[h">
-                    <field name="NUM">50</field>
+              <block type="procedures_callnoreturn" id="j+4oA2UhP2#!+=q*pC@_">
+                <mutation name="reduce_seeds"></mutation>
+                <next>
+                  <block type="procedures_callnoreturn" id="|ku{8Uji%-.Ph7+SN]uj">
+                    <mutation name="show_the_seeds"></mutation>
+                    <next>
+                      <block type="sleep_ms" id="(;%Bhl/l40#Vhea[z_N5">
+                        <value name="SLEEP_TIME_MILI">
+                          <block type="math_number" id="__#C0?Iy*cMa`=0Yy@QB">
+                            <field name="NUM">1000</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
                   </block>
-                </value>
+                </next>
               </block>
             </next>
           </block>
-        </next>
+        </statement>
       </block>
     </next>
+  </block>
+  <block type="procedures_defnoreturn" id="|Qm*Y(%1|}^IR69(FTzF" x="-2212" y="-13">
+    <field name="NAME">show_the_seeds</field>
+    <comment pinned="true" h="80" w="160">show the seeds</comment>
+    <statement name="STACK">
+      <block type="variables_set" id="{V.a=Eqo7}I6a+9ygO,E">
+        <field name="VAR">j</field>
+        <value name="VALUE">
+          <block type="math_number" id="r[k?.koJzV:.NcG(*{B/">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <next>
+          <block type="controls_forEach" id="(Zs9)R7=xe]H[f]hw(Uh">
+            <field name="VAR">i</field>
+            <value name="LIST">
+              <block type="variables_get" id="Hc[hNNgl?A.X4/GsI*|b">
+                <field name="VAR">new_seeds</field>
+              </block>
+            </value>
+            <statement name="DO">
+              <block type="procedures_callnoreturn" id="^MQZ?=Ch?F1N9rUAWh4(">
+                <mutation name="life_number_2_xy_position">
+                  <arg name="life_field_number"></arg>
+                </mutation>
+                <value name="ARG0">
+                  <block type="variables_get" id="N-)YsD}!_TLF)AxOczBs">
+                    <field name="VAR">j</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="controls_if" id="/GBJ!6UvZDbKKkqf^nA,">
+                    <mutation else="1"></mutation>
+                    <value name="IF0">
+                      <block type="logic_compare" id="|eO.tV#fOXxYc!295=DZ">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="variables_get" id="SX+t=rq[Bq!ELKZ_dm@.">
+                            <field name="VAR">i</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="math_number" id="c{REbnoL#2RE(6]ao{Nf">
+                            <field name="NUM">1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO0">
+                      <block type="set_pixel" id="36X9?8Sxl6W89yOt@B%:">
+                        <field name="colour">#ff0000</field>
+                        <value name="_X">
+                          <block type="variables_get" id="h~ez-dlV@sosM{uGWGCG">
+                            <field name="VAR">Cell_X</field>
+                          </block>
+                        </value>
+                        <value name="_Y">
+                          <block type="variables_get" id="i)X/QB{PUst2w?6LmDI0">
+                            <field name="VAR">Cell_Y</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <statement name="ELSE">
+                      <block type="set_pixel" id="-4r!R/wPavUO2}R{PJ!D">
+                        <field name="colour">#ff6666</field>
+                        <value name="_X">
+                          <block type="variables_get" id="t9dv^N3]XLiC,6T9y8VB">
+                            <field name="VAR">Cell_X</field>
+                          </block>
+                        </value>
+                        <value name="_Y">
+                          <block type="variables_get" id="@.vcX+Uw]yqR=(zg_s_.">
+                            <field name="VAR">Cell_Y</field>
+                          </block>
+                        </value>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="variables_set" id="q66;MgkJhT)Rhu~JR0a+">
+                        <field name="VAR">j</field>
+                        <value name="VALUE">
+                          <block type="math_arithmetic" id="/m)(OUp*@#t|e7535wcp">
+                            <field name="OP">ADD</field>
+                            <value name="A">
+                              <shadow type="math_number" id="IiFm)hZ9xtj_{:#g[Gnz">
+                                <field name="NUM">1</field>
+                              </shadow>
+                              <block type="variables_get" id="JSVyOb;{R3(ZnpzFrv}f">
+                                <field name="VAR">j</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <shadow type="math_number" id="]ajuKZVrNQ0y-rM-eKK1">
+                                <field name="NUM">1</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
   </block>
   <block type="procedures_callnoreturn" id="wkha(BP={Mv:pe#WnCZ*" disabled="true" x="-188" y="513">
     <mutation name="life_number_2_xy_position">
