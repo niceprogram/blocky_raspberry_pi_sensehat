@@ -1340,6 +1340,107 @@ Blockly.Python['key_end'] = function(block) {
 ///////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////
+//joystick2///
+////////////////////////////////
+Blockly.Blocks['def_joystick'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("JoyStick");
+    this.appendDummyInput()
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("up")
+        .appendField(new Blockly.FieldDropdown([["release", "ACTION_RELEASED"], ["held", "ACTION_HELD"], ["pressed", "ACTION_PRESSED"]]), "pushed_up");
+    this.appendDummyInput()
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("down")
+        .appendField(new Blockly.FieldDropdown([["release", "ACTION_RELEASED"], ["held", "ACTION_HELD"], ["pressed", "ACTION_PRESSED"]]), "pushed_down");
+    this.appendDummyInput()
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("left")
+        .appendField(new Blockly.FieldDropdown([["release", "ACTION_RELEASED"], ["held", "ACTION_HELD"], ["pressed", "ACTION_PRESSED"]]), "pushed_left");
+    this.appendDummyInput()
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("right")
+        .appendField(new Blockly.FieldDropdown([["release", "ACTION_RELEASED"], ["held", "ACTION_HELD"], ["pressed", "ACTION_PRESSED"]]), "pushed_right");
+    this.appendDummyInput()
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("push")
+        .appendField(new Blockly.FieldDropdown([["release", "ACTION_RELEASED"], ["held", "ACTION_HELD"], ["pressed", "ACTION_PRESSED"]]), "pushed");
+    this.appendDummyInput()
+        .appendField("joy_refresh()");
+    this.appendDummyInput()
+        .appendField("pause()");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(270);
+    this.setTooltip('a joystick event.');
+    this.setHelpUrl('https://pythonhosted.org/sense-hat/api/');
+  }
+};
+
+
+Blockly.Blocks['joy_clamp'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("joy_clamp 8x8");
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(260);
+    this.setTooltip('');
+    this.setHelpUrl('http://www.example.com/');
+  }
+};
+
+// python generator
+
+
+
+Blockly.Python['def_joystick'] = function(block) {
+  var dropdown_pushed_up = block.getFieldValue('pushed_up');
+  var dropdown_pushed_down = block.getFieldValue('pushed_down');
+  var dropdown_pushed_left = block.getFieldValue('pushed_left');
+  var dropdown_pushed_right = block.getFieldValue('pushed_right');
+  var dropdown_pushed = block.getFieldValue('pushed');
+  // TODO: Assemble Python into code variable.
+  var code = 'def pushed_up(event):\n' +
+'    global joy_y\n' +
+'    if event.action != ' + dropdown_pushed_up + ':\n' +
+'        joy_y = joy_clamp(joy_y - 1)\n\n' + 
+'def pushed_down(event):\n' +
+'    global joy_y\n' +
+'    if event.action != ' + dropdown_pushed_down + ':\n' +
+'        joy_y = joy_clamp(joy_y + 1)\n\n' +
+'def pushed_left(event):\n' +
+'    global joy_x\n' +
+'    if event.action != ' + dropdown_pushed_left + ':\n' +
+'        joy_x = joy_clamp(joy_x - 1)\n\n' +
+'def pushed_right(event):\n' +
+'    global joy_x\n' +
+'    if event.action != ' + dropdown_pushed_right + ':\n' +
+'        joy_x = joy_clamp(joy_x + 1)\n\n' +
+'def pushed(event):\n' +
+'    global joy_z\n' +
+'    if event.action != ' + dropdown_pushed + ':\n' +
+'        joy_z = (joy_z + 1)\n\n' +
+'sense.stick.direction_up = pushed_up\n' +
+'sense.stick.direction_down = pushed_down\n' +
+'sense.stick.direction_left = pushed_left\n' +
+'sense.stick.direction_right = pushed_right\n' +
+'sense.stick.direction_any = joy_refresh\n' +
+'joy_refresh()\n' +
+'pause()';
+Blockly.Python.definitions_['def_joystick'] = 'from sense_hat import SenseHat, ACTION_PRESSED, ACTION_HELD, ACTION_RELEASED\nsense = SenseHat()\nfrom signal import pause\n\n';
+  return code;
+};
+
+///////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+////////////////////////////////
 //Thread///
 ////////////////////////////////
 Blockly.Blocks['thread'] = {
