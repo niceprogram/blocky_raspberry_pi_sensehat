@@ -636,9 +636,7 @@
             </value>
           </block>
         </value>
-        <next>
-			
-                   
+        <next>        
                       <block type="key_end" ></block>
                     </next>
                   </block>
@@ -651,8 +649,211 @@
     </next>
   </block>
 
-		</category>		
-	</category>
+
+ <block type="procedures_defreturn">
+    <mutation>
+      <arg name="value"></arg>
+    </mutation>
+    <field name="NAME">joy_clamp</field>
+    <comment pinned="false" h="80" w="160">Keep the joystick values within the 8x8 grid</comment>
+    <statement name="STACK">
+      <block type="controls_if">
+        <mutation elseif="1"></mutation>
+        <value name="IF0">
+          <block type="logic_compare">
+            <field name="OP">LT</field>
+            <value name="A">
+              <block type="variables_get">
+                <field name="VAR">value</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number"">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="variables_set">
+            <field name="VAR">value</field>
+            <value name="VALUE">
+              <block type="math_number">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <value name="IF1">
+          <block type="logic_compare"">
+            <field name="OP">LT</field>
+            <value name="A">
+              <block type="math_number">
+                <field name="NUM">7</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="variables_get">
+                <field name="VAR">value</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO1">
+          <block type="variables_set">
+            <field name="VAR">value</field>
+            <value name="VALUE">
+              <block type="math_number">
+                <field name="NUM">7</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="RETURN">
+      <block type="variables_get">
+        <field name="VAR">value</field>
+      </block>
+    </value>
+  </block>
+  
+  
+  
+  <block type="procedures_defreturn">
+    <mutation>
+      <arg name="value"></arg>
+    </mutation>
+    <field name="NAME">joy_clamp</field>
+    <comment pinned="false" h="80" w="160">Wrap the joystick values within the 8x8</comment>
+    <statement name="STACK">
+      <block type="controls_if">
+        <mutation elseif="1"></mutation>
+        <value name="IF0">
+          <block type="logic_compare">
+            <field name="OP">LT</field>
+            <value name="A">
+              <block type="variables_get">
+                <field name="VAR">value</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="variables_set">
+            <field name="VAR">value</field>
+            <value name="VALUE">
+              <block type="math_number">
+                <field name="NUM">7</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <value name="IF1">
+          <block type="logic_compare">
+            <field name="OP">LT</field>
+            <value name="A">
+              <block type="math_number">
+                <field name="NUM">7</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="variables_get">
+                <field name="VAR">value</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO1">
+          <block type="variables_set">
+            <field name="VAR">value</field>
+            <value name="VALUE">
+              <block type="math_number">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </statement>
+    <value name="RETURN">
+      <block type="variables_get">
+        <field name="VAR">value</field>
+      </block>
+    </value>
+  </block>
+  <block type="variables_set">
+    <field name="VAR">joy_x</field>
+    <value name="VALUE">
+      <block type="math_number">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+    <next>
+      <block type="variables_set">
+        <field name="VAR">joy_y</field>
+        <value name="VALUE">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set">
+            <field name="VAR">joy_z</field>
+            <value name="VALUE">
+              <block type="math_number">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="def_joystick">
+			    <comment pinned="false" h="80" w="160">Joystick script</comment>
+                <field name="pushed_up">ACTION_RELEASED</field>
+                <field name="pushed_down">ACTION_RELEASED</field>
+                <field name="pushed_left">ACTION_RELEASED</field>
+                <field name="pushed_right">ACTION_RELEASED</field>
+                <field name="pushed">ACTION_RELEASED</field>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+  <block type="procedures_defnoreturn">
+    <field name="NAME">joy_refresh</field>
+    <comment pinned="false" h="80" w="160">Show the postion of the joystick on the 8x8 grid</comment>
+    <statement name="STACK">
+      <block type="led_clear">
+        <field name="colour">#000000</field>
+        <next>
+          <block type="set_pixel">
+            <field name="colour">#6600cc</field>
+            <value name="_X">
+              <block type="variables_get">
+                <field name="VAR">joy_x</field>
+              </block>
+            </value>
+            <value name="_Y">
+              <block type="variables_get">
+                <field name="VAR">joy_y</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+
+
+	
+</category>		
+</category>
 	
 	
 	
