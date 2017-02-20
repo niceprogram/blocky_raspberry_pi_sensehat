@@ -1,0 +1,127 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="variables_set" id="pYsI_6*M}n7^IM93|Je!" x="238" y="88">
+    <field name="VAR">temperature</field>
+  </block>
+  <block type="variables_set" id="Z4YzpL{PgQaNF19[LgQ=" x="513" y="113">
+    <field name="VAR">in_temp.</field>
+    <value name="VALUE">
+      <block type="variables_get" id="H:(|XC.6pPH0;rom=G7m">
+        <field name="VAR">temperature</field>
+      </block>
+    </value>
+    <next>
+      <block type="variables_set" id="WB6w3cFL#a9y#WGS6TNk">
+        <field name="VAR">y</field>
+        <value name="VALUE">
+          <block type="math_arithmetic" id="Vs(bAy%o=+i+5,r]04z:">
+            <field name="OP">DIVIDE</field>
+            <value name="A">
+              <shadow type="math_number" id="ZHxR5r?^~VG#qpG!P^rs">
+                <field name="NUM">1</field>
+              </shadow>
+              <block type="math_arithmetic" id="V7g{J;Ov14x1Ao6:.(,E">
+                <field name="OP">ADD</field>
+                <value name="A">
+                  <shadow type="math_number" id=":p71IptrP`8*LdDVvFhn">
+                    <field name="NUM">1</field>
+                  </shadow>
+                  <block type="variables_get" id="I~PcK4}_2OHP1W`!^AXF">
+                    <field name="VAR">temperature</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <shadow type="math_number" id="Z:E{rV1v*Z}TViiDP]rp">
+                    <field name="NUM">-10</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+            <value name="B">
+              <shadow type="math_number" id="bKtj#;om%v0Mf:%98_FP">
+                <field name="NUM">3</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+      </block>
+    </next>
+  </block>
+  <block type="controls_if" id="rz06-!6I5FGftsl1nd]c" x="163" y="263">
+    <mutation elseif="1" else="1"></mutation>
+    <value name="IF0">
+      <block type="logic_compare" id="o1IU%v{?v]L0(u.f~]ku">
+        <field name="OP">GT</field>
+        <value name="A">
+          <block type="variables_get" id="V^,0*ZMzT;^H;ENg#nQ+">
+            <field name="VAR">y</field>
+          </block>
+        </value>
+        <value name="B">
+          <block type="math_number" id="u:p!Lk@8rD.vC8(5Mzl{">
+            <field name="NUM">8</field>
+          </block>
+        </value>
+      </block>
+    </value>
+    <statement name="DO0">
+      <block type="set_pixel" id="%KvXG`%xgsg2x7:K4#NZ">
+        <field name="colour">#ff0000</field>
+        <value name="_X">
+          <block type="math_number" id="jG}ua33=aSZw/MP.v1Vf">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="_Y">
+          <block type="variables_get" id="73nml|Tqhv1(vS:,.,0N">
+            <field name="VAR">y</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <value name="IF1">
+      <block type="logic_compare" id="M4_PUrg}:kx5Iw5dJ%@k">
+        <field name="OP">LT</field>
+        <value name="A">
+          <block type="variables_get" id="vZtpyGF6XY,(Fk:APQg;">
+            <field name="VAR">y</field>
+          </block>
+        </value>
+        <value name="B">
+          <block type="math_number" id="Wu-7tYYQj_`#F~-Y)}8V">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+    </value>
+    <statement name="DO1">
+      <block type="set_pixel" id="/O6C[OcNZcj=?(6tY8l?">
+        <field name="colour">#00ffff</field>
+        <value name="_X">
+          <block type="math_number" id="@[}lQTKDZ1yb-i]_oEy!">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="_Y">
+          <block type="variables_get" id="vMj^@Cfam_u_]j79~0_U">
+            <field name="VAR">y</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+    <statement name="ELSE">
+      <block type="set_pixel" id="-WZP9=({S#msdIddUALe">
+        <field name="colour">#ffff00</field>
+        <value name="_X">
+          <block type="math_number" id="aPW8|wS}xa-MDlHn?Xwx">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="_Y">
+          <block type="variables_get" id="L*T]K8{xZo%C7}*hK^:O">
+            <field name="VAR">y</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+</xml>
