@@ -1,160 +1,164 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="variables_set" id="Ul@sgGdLKK~_}K[i;juZ" x="363" y="163">
-    <field name="VAR">hour</field>
-    <value name="VALUE">
-      <block type="math_number" id="3Y/@7wicjiW0#U8R05H`">
-        <field name="NUM">0</field>
-      </block>
-    </value>
+  <block type="led_clear" id="M,0=U^WULT4}yVdG@@zw" x="588" y="163">
+    <field name="colour">#000000</field>
     <next>
-      <block type="variables_set" id="p~b?Q_vD#tusBs={j}+?">
-        <field name="VAR">day_temp</field>
+      <block type="variables_set" id="Ul@sgGdLKK~_}K[i;juZ">
+        <field name="VAR">hour</field>
         <value name="VALUE">
-          <block type="math_number" id="nv[2|V59f=lAW6hAD/uG">
+          <block type="math_number" id="3Y/@7wicjiW0#U8R05H`">
             <field name="NUM">0</field>
           </block>
         </value>
         <next>
-          <block type="controls_whileUntil" id="*}Xyls(K#,TXEE~ZB[5J">
-            <field name="MODE">WHILE</field>
-            <value name="BOOL">
-              <block type="logic_boolean" id="lQCxG70?(Ydn(_T-?#p]">
-                <field name="BOOL">TRUE</field>
+          <block type="variables_set" id="p~b?Q_vD#tusBs={j}+?">
+            <field name="VAR">day_temp</field>
+            <value name="VALUE">
+              <block type="math_number" id="nv[2|V59f=lAW6hAD/uG">
+                <field name="NUM">0</field>
               </block>
             </value>
-            <statement name="DO">
-              <block type="variables_set" id="pYsI_6*M}n7^IM93|Je!">
-                <field name="VAR">temperature</field>
-                <value name="VALUE">
-                  <block type="get_temperature" id="~ZT^!Qu{~z0GRH`+mdi="></block>
+            <next>
+              <block type="controls_repeat_ext" id="Y=,NiW?t,:Zbmkg63Wkp">
+                <value name="TIMES">
+                  <shadow type="math_number" id="2yV%ZZ8r=^}^a4+Cu%^[">
+                    <field name="NUM">7</field>
+                  </shadow>
                 </value>
-                <next>
-                  <block type="variables_set" id="WB6w3cFL#a9y#WGS6TNk">
-                    <field name="VAR">y</field>
+                <statement name="DO">
+                  <block type="variables_set" id="pYsI_6*M}n7^IM93|Je!">
+                    <field name="VAR">temperature</field>
                     <value name="VALUE">
-                      <block type="math_arithmetic" id="Vs(bAy%o=+i+5,r]04z:">
-                        <field name="OP">DIVIDE</field>
-                        <value name="A">
-                          <shadow type="math_number" id="ZHxR5r?^~VG#qpG!P^rs">
-                            <field name="NUM">1</field>
-                          </shadow>
-                          <block type="math_arithmetic" id="V7g{J;Ov14x1Ao6:.(,E">
-                            <field name="OP">MINUS</field>
-                            <value name="A">
-                              <shadow type="math_number" id=":p71IptrP`8*LdDVvFhn">
-                                <field name="NUM">1</field>
-                              </shadow>
-                              <block type="variables_get" id="I~PcK4}_2OHP1W`!^AXF">
-                                <field name="VAR">temperature</field>
-                              </block>
-                            </value>
-                            <value name="B">
-                              <shadow type="math_number" id="Z:E{rV1v*Z}TViiDP]rp">
-                                <field name="NUM">10</field>
-                              </shadow>
-                            </value>
-                          </block>
-                        </value>
-                        <value name="B">
-                          <shadow type="math_number" id="bKtj#;om%v0Mf:%98_FP">
-                            <field name="NUM">3</field>
-                          </shadow>
-                        </value>
-                      </block>
+                      <block type="get_temperature" id="~ZT^!Qu{~z0GRH`+mdi="></block>
                     </value>
                     <next>
-                      <block type="controls_if" id="rz06-!6I5FGftsl1nd]c">
-                        <mutation elseif="1" else="1"></mutation>
-                        <value name="IF0">
-                          <block type="logic_compare" id="o1IU%v{?v]L0(u.f~]ku">
-                            <field name="OP">GT</field>
+                      <block type="variables_set" id="WB6w3cFL#a9y#WGS6TNk">
+                        <field name="VAR">y</field>
+                        <value name="VALUE">
+                          <block type="math_arithmetic" id="Vs(bAy%o=+i+5,r]04z:">
+                            <field name="OP">DIVIDE</field>
                             <value name="A">
-                              <block type="variables_get" id="V^,0*ZMzT;^H;ENg#nQ+">
-                                <field name="VAR">y</field>
-                              </block>
-                            </value>
-                            <value name="B">
-                              <block type="math_number" id="u:p!Lk@8rD.vC8(5Mzl{">
-                                <field name="NUM">7</field>
-                              </block>
-                            </value>
-                          </block>
-                        </value>
-                        <statement name="DO0">
-                          <block type="set_pixel" id="%KvXG`%xgsg2x7:K4#NZ">
-                            <field name="colour">#ff0000</field>
-                            <value name="_X">
-                              <block type="variables_get" id="Og.ca#:G!RA!XPEmf-XD">
-                                <field name="VAR">hour</field>
-                              </block>
-                            </value>
-                            <value name="_Y">
-                              <block type="math_number" id="J+Vj%*wL(*;-OW`n?vxZ">
-                                <field name="NUM">7</field>
-                              </block>
-                            </value>
-                          </block>
-                        </statement>
-                        <value name="IF1">
-                          <block type="logic_compare" id="M4_PUrg}:kx5Iw5dJ%@k">
-                            <field name="OP">LT</field>
-                            <value name="A">
-                              <block type="variables_get" id="vZtpyGF6XY,(Fk:APQg;">
-                                <field name="VAR">y</field>
-                              </block>
-                            </value>
-                            <value name="B">
-                              <block type="math_number" id="Wu-7tYYQj_`#F~-Y)}8V">
-                                <field name="NUM">0</field>
-                              </block>
-                            </value>
-                          </block>
-                        </value>
-                        <statement name="DO1">
-                          <block type="set_pixel" id="/O6C[OcNZcj=?(6tY8l?">
-                            <field name="colour">#00ffff</field>
-                            <value name="_X">
-                              <block type="variables_get" id="U7mA#0}VIgv!D]R?]4P!">
-                                <field name="VAR">hour</field>
-                              </block>
-                            </value>
-                            <value name="_Y">
-                              <block type="math_number" id="M[CitYB3HcEn;2~IL0ZK">
-                                <field name="NUM">0</field>
-                              </block>
-                            </value>
-                          </block>
-                        </statement>
-                        <statement name="ELSE">
-                          <block type="set_pixel" id="-WZP9=({S#msdIddUALe">
-                            <field name="colour">#ffff00</field>
-                            <value name="_X">
-                              <block type="variables_get" id="2Dxl+a7yP]7g0+PY!IhL">
-                                <field name="VAR">hour</field>
-                              </block>
-                            </value>
-                            <value name="_Y">
-                              <block type="variables_get" id="L*T]K8{xZo%C7}*hK^:O">
-                                <field name="VAR">y</field>
-                              </block>
-                            </value>
-                          </block>
-                        </statement>
-                        <next>
-                          <block type="sleep_ms" id="4}wKnrK*@[Z+-xq4ddXM">
-                            <value name="SLEEP_TIME_MILI">
-                              <block type="math_number" id="HPS+1Q^5^pzh~/qALD;Y">
-                                <field name="NUM">10000</field>
-                              </block>
-                            </value>
-                            <next>
-                              <block type="math_change" id="rVlr_iw6xeQ{@|+N-Cn3">
-                                <field name="VAR">hour</field>
-                                <value name="DELTA">
-                                  <shadow type="math_number" id="b=by#XY9kwpRW-:+z^9?">
+                              <shadow type="math_number" id="ZHxR5r?^~VG#qpG!P^rs">
+                                <field name="NUM">1</field>
+                              </shadow>
+                              <block type="math_arithmetic" id="V7g{J;Ov14x1Ao6:.(,E">
+                                <field name="OP">MINUS</field>
+                                <value name="A">
+                                  <shadow type="math_number" id=":p71IptrP`8*LdDVvFhn">
                                     <field name="NUM">1</field>
                                   </shadow>
+                                  <block type="variables_get" id="I~PcK4}_2OHP1W`!^AXF">
+                                    <field name="VAR">temperature</field>
+                                  </block>
                                 </value>
+                                <value name="B">
+                                  <shadow type="math_number" id="Z:E{rV1v*Z}TViiDP]rp">
+                                    <field name="NUM">10</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <shadow type="math_number" id="bKtj#;om%v0Mf:%98_FP">
+                                <field name="NUM">3</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="controls_if" id="rz06-!6I5FGftsl1nd]c">
+                            <mutation elseif="1" else="1"></mutation>
+                            <value name="IF0">
+                              <block type="logic_compare" id="o1IU%v{?v]L0(u.f~]ku">
+                                <field name="OP">GT</field>
+                                <value name="A">
+                                  <block type="variables_get" id="V^,0*ZMzT;^H;ENg#nQ+">
+                                    <field name="VAR">y</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="u:p!Lk@8rD.vC8(5Mzl{">
+                                    <field name="NUM">7</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="DO0">
+                              <block type="set_pixel" id="%KvXG`%xgsg2x7:K4#NZ">
+                                <field name="colour">#ff0000</field>
+                                <value name="_X">
+                                  <block type="variables_get" id="Og.ca#:G!RA!XPEmf-XD">
+                                    <field name="VAR">hour</field>
+                                  </block>
+                                </value>
+                                <value name="_Y">
+                                  <block type="math_number" id="J+Vj%*wL(*;-OW`n?vxZ">
+                                    <field name="NUM">7</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </statement>
+                            <value name="IF1">
+                              <block type="logic_compare" id="M4_PUrg}:kx5Iw5dJ%@k">
+                                <field name="OP">LT</field>
+                                <value name="A">
+                                  <block type="variables_get" id="vZtpyGF6XY,(Fk:APQg;">
+                                    <field name="VAR">y</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <block type="math_number" id="Wu-7tYYQj_`#F~-Y)}8V">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <statement name="DO1">
+                              <block type="set_pixel" id="/O6C[OcNZcj=?(6tY8l?">
+                                <field name="colour">#00ffff</field>
+                                <value name="_X">
+                                  <block type="variables_get" id="U7mA#0}VIgv!D]R?]4P!">
+                                    <field name="VAR">hour</field>
+                                  </block>
+                                </value>
+                                <value name="_Y">
+                                  <block type="math_number" id="M[CitYB3HcEn;2~IL0ZK">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </statement>
+                            <statement name="ELSE">
+                              <block type="set_pixel" id="-WZP9=({S#msdIddUALe">
+                                <field name="colour">#ffff00</field>
+                                <value name="_X">
+                                  <block type="variables_get" id="2Dxl+a7yP]7g0+PY!IhL">
+                                    <field name="VAR">hour</field>
+                                  </block>
+                                </value>
+                                <value name="_Y">
+                                  <block type="variables_get" id="L*T]K8{xZo%C7}*hK^:O">
+                                    <field name="VAR">y</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </statement>
+                            <next>
+                              <block type="sleep_ms" id="4}wKnrK*@[Z+-xq4ddXM">
+                                <value name="SLEEP_TIME_MILI">
+                                  <block type="math_number" id="HPS+1Q^5^pzh~/qALD;Y">
+                                    <field name="NUM">3600000</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="math_change" id="rVlr_iw6xeQ{@|+N-Cn3">
+                                    <field name="VAR">hour</field>
+                                    <value name="DELTA">
+                                      <shadow type="math_number" id="b=by#XY9kwpRW-:+z^9?">
+                                        <field name="NUM">1</field>
+                                      </shadow>
+                                    </value>
+                                  </block>
+                                </next>
                               </block>
                             </next>
                           </block>
@@ -162,9 +166,9 @@
                       </block>
                     </next>
                   </block>
-                </next>
+                </statement>
               </block>
-            </statement>
+            </next>
           </block>
         </next>
       </block>
