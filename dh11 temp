@@ -1,6 +1,6 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="variables_set" id="Ul@sgGdLKK~_}K[i;juZ" x="363" y="188">
-    <field name="VAR">day</field>
+  <block type="variables_set" id="Ul@sgGdLKK~_}K[i;juZ" x="363" y="163">
+    <field name="VAR">hour</field>
     <value name="VALUE">
       <block type="math_number" id="3Y/@7wicjiW0#U8R05H`">
         <field name="NUM">0</field>
@@ -84,8 +84,8 @@
                           <block type="set_pixel" id="%KvXG`%xgsg2x7:K4#NZ">
                             <field name="colour">#ff0000</field>
                             <value name="_X">
-                              <block type="math_number" id="jG}ua33=aSZw/MP.v1Vf">
-                                <field name="NUM">0</field>
+                              <block type="variables_get" id="Og.ca#:G!RA!XPEmf-XD">
+                                <field name="VAR">hour</field>
                               </block>
                             </value>
                             <value name="_Y">
@@ -114,8 +114,8 @@
                           <block type="set_pixel" id="/O6C[OcNZcj=?(6tY8l?">
                             <field name="colour">#00ffff</field>
                             <value name="_X">
-                              <block type="math_number" id="@[}lQTKDZ1yb-i]_oEy!">
-                                <field name="NUM">0</field>
+                              <block type="variables_get" id="U7mA#0}VIgv!D]R?]4P!">
+                                <field name="VAR">hour</field>
                               </block>
                             </value>
                             <value name="_Y">
@@ -129,8 +129,8 @@
                           <block type="set_pixel" id="-WZP9=({S#msdIddUALe">
                             <field name="colour">#ffff00</field>
                             <value name="_X">
-                              <block type="math_number" id="aPW8|wS}xa-MDlHn?Xwx">
-                                <field name="NUM">0</field>
+                              <block type="variables_get" id="2Dxl+a7yP]7g0+PY!IhL">
+                                <field name="VAR">hour</field>
                               </block>
                             </value>
                             <value name="_Y">
@@ -147,6 +147,16 @@
                                 <field name="NUM">10000</field>
                               </block>
                             </value>
+                            <next>
+                              <block type="math_change" id="rVlr_iw6xeQ{@|+N-Cn3">
+                                <field name="VAR">hour</field>
+                                <value name="DELTA">
+                                  <shadow type="math_number" id="b=by#XY9kwpRW-:+z^9?">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </next>
                           </block>
                         </next>
                       </block>
