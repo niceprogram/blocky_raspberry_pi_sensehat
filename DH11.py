@@ -33,3 +33,4 @@ for count in range(7):
     sense.set_pixel(hour,y,[255,255,0])   # (x,y,r,g,b)
   sleep(360/1000)
   hour = (hour if isinstance(hour, Number) else 0) + 1
+https://github.com/initialstate/wunderground-sensehat/blob/master/README.md
