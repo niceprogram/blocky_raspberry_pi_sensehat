@@ -1,3 +1,10 @@
+from sense_hat import SenseHat
+sense = SenseHat()
+
+import math
+from time import sleep
+from numbers import Number
+
 hour = None
 day_temp = None
 temperature = None
