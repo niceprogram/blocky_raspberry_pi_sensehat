@@ -1,7 +1,7 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <block type="procedures_defnoreturn" id="lK`kj[dsvtn2d1,s+NJ," x="-2212" y="-962">
     <field name="NAME">make_new_seeds</field>
-    <comment pinned="false" h="80" w="160">Make a random list of seeds</comment>
+    <comment pinned="true" h="80" w="160">Make a random list of seeds according to the temperature and display the result on an 8x8 grid</comment>
     <statement name="STACK">
       <block type="variables_set" id="SC4t.lR?~50)o-I%|OeI">
         <field name="VAR">New_Seeds</field>
@@ -633,7 +633,7 @@
       <block type="procedures_callnoreturn" id="@om^Z5~*k8jtluuRlzml">
         <mutation name="make_new_seeds"></mutation>
         <next>
-          <block type="procedures_callnoreturn" id="|ku{8Uji%-.Ph7+SN]uj" disabled="true">
+          <block type="procedures_callnoreturn" id="|ku{8Uji%-.Ph7+SN]uj">
             <mutation name="show_the_seeds"></mutation>
             <next>
               <block type="sleep_ms" id="(;%Bhl/l40#Vhea[z_N5">
@@ -649,7 +649,7 @@
       </block>
     </statement>
   </block>
-  <block type="procedures_defnoreturn" id="|Qm*Y(%1|}^IR69(FTzF" disabled="true" x="-2187" y="112">
+  <block type="procedures_defnoreturn" id="|Qm*Y(%1|}^IR69(FTzF" x="-2187" y="112">
     <field name="NAME">show_the_seeds</field>
     <comment pinned="true" h="80" w="160">show the seeds</comment>
     <statement name="STACK">
@@ -698,7 +698,7 @@
                     </value>
                     <statement name="DO0">
                       <block type="set_pixel" id="36X9?8Sxl6W89yOt@B%:">
-                        <field name="colour">#ff0000</field>
+                        <field name="colour">#996633</field>
                         <value name="_X">
                           <block type="variables_get" id="h~ez-dlV@sosM{uGWGCG">
                             <field name="VAR">Cell_X</field>
@@ -713,7 +713,7 @@
                     </statement>
                     <statement name="ELSE">
                       <block type="set_pixel" id="-4r!R/wPavUO2}R{PJ!D">
-                        <field name="colour">#ff6666</field>
+                        <field name="colour">#663366</field>
                         <value name="_X">
                           <block type="variables_get" id="t9dv^N3]XLiC,6T9y8VB">
                             <field name="VAR">Cell_X</field>
