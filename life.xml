@@ -1,10 +1,10 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
-  <block type="procedures_defnoreturn" id="xO1M}tW2seO}{2alV4eE" x="812" y="-137">
+  <block type="procedures_defnoreturn" id="xO1M}tW2seO}{2alV4eE" x="812" y="-213">
     <mutation>
       <arg name="life_field_number"></arg>
     </mutation>
     <field name="NAME">life_number_2_xy_position</field>
-    <comment pinned="false" h="42" w="292">convert cell position number to Cell_X Cell_Y</comment>
+    <comment pinned="true" h="42" w="292">convert cell position number to Cell_X Cell_Y</comment>
     <statement name="STACK">
       <block type="controls_for" id="1~FJT9gg(H?@gW|To+w|">
         <field name="VAR">Neighbour_cell_Y</field>
@@ -129,50 +129,104 @@
       </block>
     </statement>
   </block>
-  <block type="variables_set" id="SJFb!oEkG5#.e5}1Y,*R" x="238" y="-12">
-    <field name="VAR">Cell_X</field>
+  <block type="variables_set" id="AYnB-qloUL%#^^C!Npl," x="238" y="-163">
+    <field name="VAR">LED_field</field>
     <value name="VALUE">
-      <block type="math_number" id="JER8A5G29!pnE])E?gWJ">
-        <field name="NUM">0</field>
+      <block type="led_field" id="tgOugSc;:UxaIrl0-89:">
+        <field name="r1">#000000</field>
+        <field name="r2">#000000</field>
+        <field name="r3">#00ff00</field>
+        <field name="r4">#00ff00</field>
+        <field name="r5">#000000</field>
+        <field name="r6">#000000</field>
+        <field name="r7">#000000</field>
+        <field name="r8">#000000</field>
+        <field name="r9">#000000</field>
+        <field name="r10">#00ff00</field>
+        <field name="r11">#00ff00</field>
+        <field name="r12">#00ff00</field>
+        <field name="r13">#000000</field>
+        <field name="r14">#000000</field>
+        <field name="r15">#00ff00</field>
+        <field name="r16">#00ff00</field>
+        <field name="r17">#000000</field>
+        <field name="r18">#000000</field>
+        <field name="r19">#00ff00</field>
+        <field name="r20">#00ff00</field>
+        <field name="r21">#000000</field>
+        <field name="r22">#000000</field>
+        <field name="r23">#00ff00</field>
+        <field name="r24">#000000</field>
+        <field name="r25">#000000</field>
+        <field name="r26">#000000</field>
+        <field name="r27">#00ff00</field>
+        <field name="r28">#000000</field>
+        <field name="r29">#000000</field>
+        <field name="r30">#000000</field>
+        <field name="r31">#00ff00</field>
+        <field name="r32">#000000</field>
+        <field name="r33">#00ff00</field>
+        <field name="r34">#000000</field>
+        <field name="r35">#000000</field>
+        <field name="r36">#000000</field>
+        <field name="r37">#000000</field>
+        <field name="r38">#00ff00</field>
+        <field name="r39">#000000</field>
+        <field name="r40">#000000</field>
+        <field name="r41">#000000</field>
+        <field name="r42">#00ff00</field>
+        <field name="r43">#000000</field>
+        <field name="r44">#000000</field>
+        <field name="r45">#00ff00</field>
+        <field name="r46">#000000</field>
+        <field name="r47">#000000</field>
+        <field name="r48">#00ff00</field>
+        <field name="r49">#000000</field>
+        <field name="r50">#00ff00</field>
+        <field name="r51">#000000</field>
+        <field name="r52">#000000</field>
+        <field name="r53">#000000</field>
+        <field name="r54">#000000</field>
+        <field name="r55">#00ff00</field>
+        <field name="r56">#000000</field>
+        <field name="r57">#000000</field>
+        <field name="r58">#000000</field>
+        <field name="r59">#00ff00</field>
+        <field name="r60">#000000</field>
+        <field name="r61">#000000</field>
+        <field name="r62">#000000</field>
+        <field name="r63">#00ff00</field>
+        <field name="r64">#000000</field>
       </block>
     </value>
     <next>
-      <block type="variables_set" id="5P3b:f%dwEwpc.F80oa0">
-        <field name="VAR">Cell_Y</field>
+      <block type="variables_set" id="SJFb!oEkG5#.e5}1Y,*R">
+        <field name="VAR">Cell_X</field>
         <value name="VALUE">
-          <block type="math_number" id="wM(pG/2iRH|!xr%W/,Ak">
+          <block type="math_number" id="JER8A5G29!pnE])E?gWJ">
             <field name="NUM">0</field>
           </block>
         </value>
         <next>
-          <block type="variables_set" id="az+)^;gEE%yZ@JX5a:yD" disabled="true">
-            <field name="VAR">life_list</field>
+          <block type="variables_set" id="5P3b:f%dwEwpc.F80oa0">
+            <field name="VAR">Cell_Y</field>
             <value name="VALUE">
-              <block type="lists_repeat" id="+[{Sn-q21ntX|NY_QII0">
-                <value name="ITEM">
-                  <block type="math_number" id="!R#/}!LRIndx(kQu}x/g">
-                    <field name="NUM">0</field>
-                  </block>
-                </value>
-                <value name="NUM">
-                  <shadow type="math_number" id=":K/h39,B{,/Q@t#Yz+:5">
-                    <field name="NUM">64</field>
-                  </shadow>
-                </value>
+              <block type="math_number" id="wM(pG/2iRH|!xr%W/,Ak">
+                <field name="NUM">0</field>
               </block>
             </value>
             <next>
-              <block type="variables_set" id="x[`,Tn5d3`iWE*T^mm:i">
-                <field name="VAR">new_life_list</field>
+              <block type="variables_set" id="az+)^;gEE%yZ@JX5a:yD">
+                <field name="VAR">life_list</field>
                 <value name="VALUE">
-                  <block type="lists_repeat" id="Hd@muzFF_+S7RRJrtZH%">
+                  <block type="lists_repeat" id="+[{Sn-q21ntX|NY_QII0">
                     <value name="ITEM">
-                      <block type="math_number" id="IrU[aDa%+uG[G8([ZCjH">
-                        <field name="NUM">0</field>
+                      <block type="math_number" id="!R#/}!LRIndx(kQu}x/g">
+                        <field name="NUM">1</field>
                       </block>
                     </value>
                     <value name="NUM">
-                      <shadow type="math_number" id="_S-^XQT|vk8bFZiyub|J">
+                      <shadow type="math_number" id=":K/h39,B{,/Q@t#Yz+:5">
                         <field name="NUM">64</field>
                       </shadow>
                     </value>
@@ -182,356 +236,242 @@
                   <block type="led_clear" id="cNw[+h5jC+R`T2-?TR-s">
                     <field name="colour">#000000</field>
                     <next>
-                      <block type="variables_set" id="@/k8+uUkV[(R?;Z1Fpe^">
-                        <field name="VAR">New_Seeds</field>
-                        <value name="VALUE">
-                          <block type="math_number" id="l9M,qDU%h3=IJ5}%ylwE">
-                            <field name="NUM">0</field>
-                          </block>
+                      <block type="set_pixels" id="iB(hbrAg-cMGNm;Exmdw">
+                        <value name="set_LED">
+                          <shadow type="variables_get" id="U49[uMd5SP/P1`RAWYt}">
+                            <field name="VAR">LED_field</field>
+                          </shadow>
                         </value>
                         <next>
-                          <block type="variables_set" id="JcYJ,3E4uGtmf}qq`h#A">
-                            <field name="VAR">life_list</field>
+                          <block type="variables_set" id="@/k8+uUkV[(R?;Z1Fpe^">
+                            <field name="VAR">New_Seeds</field>
                             <value name="VALUE">
-                              <block type="variables_get" id=";xTnl};}I%ZHVW!WfAiU">
-                                <field name="VAR">New_Seeds</field>
-                              </block>
-                            </value>
-                            <next>
-                              <block type="variables_set" id="fd5X,!#l8{ZMUJn0zKo;">
-                                <field name="VAR">cell_number</field>
-                                <value name="VALUE">
-                                  <block type="math_number" id="{):)VnpetS~G2OmM)RXc">
+                              <block type="lists_repeat" id="rhIlfrJ:+K?aDg[2c,3i">
+                                <value name="ITEM">
+                                  <block type="math_number" id="U2tr#f~aSq])v2!`UbT:">
                                     <field name="NUM">0</field>
                                   </block>
                                 </value>
+                                <value name="NUM">
+                                  <shadow type="math_number" id="}OJa?UV_10%D8:T|LWF0">
+                                    <field name="NUM">64</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="variables_set" id="JcYJ,3E4uGtmf}qq`h#A">
+                                <field name="VAR">life_list</field>
+                                <value name="VALUE">
+                                  <block type="variables_get" id=";xTnl};}I%ZHVW!WfAiU">
+                                    <field name="VAR">New_Seeds</field>
+                                  </block>
+                                </value>
                                 <next>
-                                  <block type="controls_forEach" id="nf~:i6AI:%]m}xNAGdxN">
-                                    <field name="VAR">grid_position</field>
-                                    <comment pinned="false" h="80" w="160">check for alive</comment>
-                                    <value name="LIST">
-                                      <block type="variables_get" id="4Y*,qhV?DM6Kf6).flfm">
-                                        <field name="VAR">life_list</field>
+                                  <block type="variables_set" id="fd5X,!#l8{ZMUJn0zKo;">
+                                    <field name="VAR">cell_number</field>
+                                    <value name="VALUE">
+                                      <block type="math_number" id="{):)VnpetS~G2OmM)RXc">
+                                        <field name="NUM">0</field>
                                       </block>
                                     </value>
-                                    <statement name="DO">
-                                      <block type="controls_if" id="(R`X[a+KNBY,YM#H]r]+">
-                                        <mutation else="1"></mutation>
-                                        <value name="IF0">
-                                          <block type="logic_compare" id="TZ+`^{qg!fNL./4)+zf{">
-                                            <field name="OP">EQ</field>
-                                            <value name="A">
-                                              <block type="variables_get" id="!}xh4,6OuBLe!1Zs)LH*">
-                                                <field name="VAR">grid_position</field>
-                                              </block>
-                                            </value>
-                                            <value name="B">
-                                              <block type="math_number" id="T@S}SPIKPsmQmCmYOkLW">
-                                                <field name="NUM">1</field>
-                                              </block>
-                                            </value>
+                                    <next>
+                                      <block type="controls_forEach" id="nf~:i6AI:%]m}xNAGdxN">
+                                        <field name="VAR">grid_position</field>
+                                        <comment pinned="false" h="80" w="160">check for alive</comment>
+                                        <value name="LIST">
+                                          <block type="variables_get" id="4Y*,qhV?DM6Kf6).flfm">
+                                            <field name="VAR">life_list</field>
                                           </block>
                                         </value>
-                                        <statement name="DO0">
-                                          <block type="procedures_callnoreturn" id="A:KMF}08zYl5-7qHGGXR">
-                                            <mutation name="life_number_2_xy_position">
-                                              <arg name="life_field_number"></arg>
-                                            </mutation>
-                                            <value name="ARG0">
-                                              <block type="variables_get" id="kTj6:[h{%8!]}DG_FbIT">
-                                                <field name="VAR">cell_number</field>
-                                              </block>
-                                            </value>
-                                            <next>
-                                              <block type="set_pixel" id="nGPYjBg/vpV5X+re4Vs|">
-                                                <field name="colour">#ffff00</field>
-                                                <value name="_X">
-                                                  <block type="variables_get" id="tDx1NRa?g!a(1/rZs`Xo">
-                                                    <field name="VAR">Cell_X</field>
-                                                  </block>
-                                                </value>
-                                                <value name="_Y">
-                                                  <block type="variables_get" id="_)sX9%2!]qwCHCy7Iok9">
-                                                    <field name="VAR">Cell_Y</field>
-                                                  </block>
-                                                </value>
-                                                <next>
-                                                  <block type="variables_set" id="q73lzACx5_8#Ke_BdgsU">
-                                                    <field name="VAR">grid_position</field>
-                                                    <value name="VALUE">
-                                                      <block type="procedures_callreturn" id="|`wne1hy[{2Bd2Jb/)Hd">
-                                                        <mutation name="test_Each_cell"></mutation>
-                                                      </block>
-                                                    </value>
-                                                  </block>
-                                                </next>
-                                              </block>
-                                            </next>
-                                          </block>
-                                        </statement>
-                                        <statement name="ELSE">
-                                          <block type="variables_set" id="t.tqvt*xS#O[9/-i?[^X">
-                                            <field name="VAR">grid_position</field>
-                                            <value name="VALUE">
-                                              <block type="math_number" id="zwu1c!gI_+RapWt)(Czh">
-                                                <field name="NUM">0</field>
-                                              </block>
-                                            </value>
-                                          </block>
-                                        </statement>
-                                        <next>
-                                          <block type="text_print" id="_1w4a632`uLA~]^41S(,">
+                                        <statement name="DO">
+                                          <block type="text_print" id="-Ypmid+k58s8[3R)aKz*">
                                             <value name="TEXT">
-                                              <shadow type="text" id="Q6agat{P.M)cR0E_pWyL">
+                                              <shadow type="text" id="]wPT`n*K%za[DIj!5sVt">
                                                 <field name="TEXT">abc</field>
                                               </shadow>
-                                              <block type="text_join" id="S2?h2PS3y{hNi2@1e-=L">
-                                                <mutation items="4"></mutation>
+                                              <block type="text_join" id="F-/_n2[tSy!032A.v~7u">
+                                                <mutation items="2"></mutation>
                                                 <value name="ADD0">
-                                                  <block type="text" id="4A{n)E=acV:a]+Z#%s!C">
-                                                    <field name="TEXT">x</field>
+                                                  <block type="text" id="dM9xpubH!@017K420J3y">
+                                                    <field name="TEXT">grid_position = </field>
                                                   </block>
                                                 </value>
                                                 <value name="ADD1">
-                                                  <block type="variables_get" id="QlzuSC)L2wQh?mIv8y)-">
-                                                    <field name="VAR">Cell_X</field>
-                                                  </block>
-                                                </value>
-                                                <value name="ADD2">
-                                                  <block type="text" id="Z70G09Zv1l/5U~^Gjj3j">
-                                                    <field name="TEXT">y</field>
-                                                  </block>
-                                                </value>
-                                                <value name="ADD3">
-                                                  <block type="variables_get" id="{(zK;]X{opu*ZwSXWjaA">
-                                                    <field name="VAR">Cell_Y</field>
+                                                  <block type="variables_get" id="#aLQ]KIv%1rWC^Y-p%j3">
+                                                    <field name="VAR">grid_position</field>
                                                   </block>
                                                 </value>
                                               </block>
                                             </value>
                                             <next>
-                                              <block type="controls_if" id="z3:e#9Zz6@OFN)1UykQ`">
+                                              <block type="controls_if" id="(R`X[a+KNBY,YM#H]r]+">
                                                 <mutation else="1"></mutation>
                                                 <value name="IF0">
-                                                  <block type="logic_compare" id="0GbYAt~ziirqd`XA|O,U">
+                                                  <block type="logic_compare" id="TZ+`^{qg!fNL./4)+zf{">
                                                     <field name="OP">EQ</field>
                                                     <value name="A">
-                                                      <block type="variables_get" id="c!Iy!#:O?iu#[Hom@Wkc">
-                                                        <field name="VAR">alive</field>
+                                                      <block type="variables_get" id="!}xh4,6OuBLe!1Zs)LH*">
+                                                        <field name="VAR">grid_position</field>
                                                       </block>
                                                     </value>
                                                     <value name="B">
-                                                      <block type="math_number" id="g=]^2-DJJBt/fQqbT3n@">
+                                                      <block type="math_number" id="T@S}SPIKPsmQmCmYOkLW">
                                                         <field name="NUM">1</field>
                                                       </block>
                                                     </value>
                                                   </block>
                                                 </value>
                                                 <statement name="DO0">
-                                                  <block type="set_pixel" id="OI%3tZ1m%@3*MdAVZ7ST">
-                                                    <field name="colour">#ff8000</field>
-                                                    <value name="_X">
-                                                      <block type="variables_get" id="ZoUMRYjHQL9U*4C)wpCr">
-                                                        <field name="VAR">Cell_X</field>
-                                                      </block>
+                                                  <block type="text_print" id="G+gw--FH^(o|^1G!U/Uy">
+                                                    <value name="TEXT">
+                                                      <shadow type="text" id="I/~bWiB1DSwawdw=5t,u">
+                                                        <field name="TEXT">grid==1</field>
+                                                      </shadow>
                                                     </value>
-                                                    <value name="_Y">
-                                                      <block type="variables_get" id="}3AXObpws%#-U~({t??=">
-                                                        <field name="VAR">Cell_Y</field>
-                                                      </block>
-                                                    </value>
-                                                  </block>
-                                                </statement>
-                                                <statement name="ELSE">
-                                                  <block type="set_pixel" id="74N0+P~*Rn?J=.9lcyHU">
-                                                    <field name="colour">#6600cc</field>
-                                                    <value name="_X">
-                                                      <block type="variables_get" id="BCJ4em.vG45QeEsZw-k(">
-                                                        <field name="VAR">Cell_X</field>
-                                                      </block>
-                                                    </value>
-                                                    <value name="_Y">
-                                                      <block type="variables_get" id="H#R]:](EAWPZez;HGeTb">
-                                                        <field name="VAR">Cell_Y</field>
-                                                      </block>
-                                                    </value>
-                                                  </block>
-                                                </statement>
-                                                <next>
-                                                  <block type="variables_set" id="m_4hClx;S;Q#Sq`]swV~">
-                                                    <field name="VAR">cell_number</field>
-                                                    <value name="VALUE">
-                                                      <block type="math_arithmetic" id=")|4|Eh=Y+83v3fzLn6.J">
-                                                        <field name="OP">ADD</field>
-                                                        <value name="A">
-                                                          <shadow id=",%[beI3,IRm~FRrStwUo" type="math_number">
-                                                            <field name="NUM">1</field>
-                                                          </shadow>
-                                                          <block type="variables_get" id="7tVSSNUMf630U}Tkbmd,">
+                                                    <next>
+                                                      <block type="procedures_callnoreturn" id="A:KMF}08zYl5-7qHGGXR">
+                                                        <mutation name="life_number_2_xy_position">
+                                                          <arg name="life_field_number"></arg>
+                                                        </mutation>
+                                                        <value name="ARG0">
+                                                          <block type="variables_get" id="kTj6:[h{%8!]}DG_FbIT">
                                                             <field name="VAR">cell_number</field>
                                                           </block>
                                                         </value>
-                                                        <value name="B">
-                                                          <shadow type="math_number" id="?FR;UqS4DNvoFKf}0jyv">
-                                                            <field name="NUM">1</field>
-                                                          </shadow>
-                                                        </value>
-                                                      </block>
-                                                    </value>
-                                                  </block>
-                                                </next>
-                                              </block>
-                                            </next>
-                                          </block>
-                                        </next>
-                                      </block>
-                                    </statement>
-                                    <next>
-                                      <block type="variables_set" id="-h24.lK(FzfE6I=KP||j" disabled="true">
-                                        <field name="VAR">cell_number</field>
-                                        <value name="VALUE">
-                                          <block type="math_number" id=";aO))~ycwlK;|EHN{:;{">
-                                            <field name="NUM">0</field>
-                                          </block>
-                                        </value>
-                                        <next>
-                                          <block type="controls_forEach" id="jtarrC)dP=a6ZY(!Ynij" disabled="true">
-                                            <field name="VAR">grid_position</field>
-                                            <comment pinned="false" h="80" w="160">check for new</comment>
-                                            <value name="LIST">
-                                              <block type="variables_get" id="D0HBQVxFZ*+8L7@D!O/`">
-                                                <field name="VAR">life_list</field>
-                                              </block>
-                                            </value>
-                                            <statement name="DO">
-                                              <block type="controls_if" id=":}E6,UItqf`Ezt9)zfCC">
-                                                <mutation else="1"></mutation>
-                                                <value name="IF0">
-                                                  <block type="logic_compare" id="TP~*}1PsSezC7(%SxnJ=">
-                                                    <field name="OP">EQ</field>
-                                                    <value name="A">
-                                                      <block type="variables_get" id="9E7N:+}a{x2wr-BgQe3X">
-                                                        <field name="VAR">grid_position</field>
-                                                      </block>
-                                                    </value>
-                                                    <value name="B">
-                                                      <block type="math_number" id="iWin`26og4C#+o.JTJ;z">
-                                                        <field name="NUM">0</field>
-                                                      </block>
-                                                    </value>
-                                                  </block>
-                                                </value>
-                                                <statement name="DO0">
-                                                  <block type="procedures_callnoreturn" id="pa18LZp5)Yh|ht1O=c}B">
-                                                    <mutation name="life_number_2_xy_position">
-                                                      <arg name="life_field_number"></arg>
-                                                    </mutation>
-                                                    <value name="ARG0">
-                                                      <block type="variables_get" id="~F:qtYA*[5MgQ061o%IA">
-                                                        <field name="VAR">cell_number</field>
-                                                      </block>
-                                                    </value>
-                                                    <next>
-                                                      <block type="variables_set" id="VyPD}ej:SKzwqMkZMy?G">
-                                                        <field name="VAR">grid_position</field>
-                                                        <value name="VALUE">
-                                                          <block type="procedures_callreturn" id="6B)jWW1,a?faI--1^tG,">
-                                                            <mutation name="test_Each_cell"></mutation>
+                                                        <next>
+                                                          <block type="set_pixel" id="nGPYjBg/vpV5X+re4Vs|">
+                                                            <field name="colour">#ffff00</field>
+                                                            <value name="_X">
+                                                              <block type="variables_get" id="tDx1NRa?g!a(1/rZs`Xo">
+                                                                <field name="VAR">Cell_X</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="_Y">
+                                                              <block type="variables_get" id="_)sX9%2!]qwCHCy7Iok9">
+                                                                <field name="VAR">Cell_Y</field>
+                                                              </block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="variables_set" id="q73lzACx5_8#Ke_BdgsU">
+                                                                <field name="VAR">grid_position</field>
+                                                                <value name="VALUE">
+                                                                  <block type="procedures_callreturn" id="|`wne1hy[{2Bd2Jb/)Hd">
+                                                                    <mutation name="test_Each_cell"></mutation>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </next>
                                                           </block>
-                                                        </value>
+                                                        </next>
                                                       </block>
                                                     </next>
                                                   </block>
                                                 </statement>
                                                 <statement name="ELSE">
-                                                  <block type="variables_set" id="w|+eb;2C0{yT]Y@*8.LH">
+                                                  <block type="variables_set" id="t.tqvt*xS#O[9/-i?[^X">
                                                     <field name="VAR">grid_position</field>
                                                     <value name="VALUE">
-                                                      <block type="math_number" id="xXF}{9WjQ|)+^r4dS)[h">
+                                                      <block type="math_number" id="zwu1c!gI_+RapWt)(Czh">
                                                         <field name="NUM">0</field>
                                                       </block>
                                                     </value>
                                                   </block>
                                                 </statement>
                                                 <next>
-                                                  <block type="text_print" id="Kn5fq^;~+l1QC])J8jk[">
+                                                  <block type="text_print" id="_1w4a632`uLA~]^41S(,">
                                                     <value name="TEXT">
                                                       <shadow type="text" id="Q6agat{P.M)cR0E_pWyL">
                                                         <field name="TEXT">abc</field>
                                                       </shadow>
-                                                      <block type="text_join" id="{p1QQP?)~Tf)_IIcf=%J">
+                                                      <block type="text_join" id="S2?h2PS3y{hNi2@1e-=L">
                                                         <mutation items="4"></mutation>
                                                         <value name="ADD0">
-                                                          <block type="text" id="H{?7rGA@n3M*_B{LCc{u">
-                                                            <field name="TEXT">x</field>
+                                                          <block type="text" id="4A{n)E=acV:a]+Z#%s!C">
+                                                            <field name="TEXT">=</field>
                                                           </block>
                                                         </value>
                                                         <value name="ADD1">
-                                                          <block type="variables_get" id="19yCubtM^Nh,]e_ucCX/">
+                                                          <block type="variables_get" id="QlzuSC)L2wQh?mIv8y)-">
                                                             <field name="VAR">Cell_X</field>
                                                           </block>
                                                         </value>
                                                         <value name="ADD2">
-                                                          <block type="text" id="#n?nI%me)?]#`O3Nlx!J">
-                                                            <field name="TEXT">y</field>
+                                                          <block type="text" id="Z70G09Zv1l/5U~^Gjj3j">
+                                                            <field name="TEXT">y=</field>
                                                           </block>
                                                         </value>
                                                         <value name="ADD3">
-                                                          <block type="variables_get" id="Bs1SpN9*KNQ(|KonnYS=">
+                                                          <block type="variables_get" id="{(zK;]X{opu*ZwSXWjaA">
                                                             <field name="VAR">Cell_Y</field>
                                                           </block>
                                                         </value>
                                                       </block>
                                                     </value>
                                                     <next>
-                                                      <block type="controls_if" id=".0E8X-g|zLZ))[~3I5O:">
+                                                      <block type="controls_if" id="z3:e#9Zz6@OFN)1UykQ`">
                                                         <mutation else="1"></mutation>
                                                         <value name="IF0">
-                                                          <block type="logic_compare" id="gJe_}wzo/.]HS:~Wiv3?">
+                                                          <block type="logic_compare" id="0GbYAt~ziirqd`XA|O,U">
                                                             <field name="OP">EQ</field>
                                                             <value name="A">
-                                                              <block type="variables_get" id=";2mz/rYVB^[w!.V~OmmU">
+                                                              <block type="variables_get" id="c!Iy!#:O?iu#[Hom@Wkc">
                                                                 <field name="VAR">alive</field>
                                                               </block>
                                                             </value>
                                                             <value name="B">
-                                                              <block type="math_number" id="|wia5.p8IpVDTbp)mq+U">
+                                                              <block type="math_number" id="g=]^2-DJJBt/fQqbT3n@">
                                                                 <field name="NUM">1</field>
                                                               </block>
                                                             </value>
                                                           </block>
                                                         </value>
                                                         <statement name="DO0">
-                                                          <block type="set_pixel" id="hTB8L3Ng]lH%1@}f,7ff">
-                                                            <field name="colour">#0000ff</field>
+                                                          <block type="set_pixel" id="OI%3tZ1m%@3*MdAVZ7ST">
+                                                            <field name="colour">#ff8000</field>
                                                             <value name="_X">
-                                                              <block type="variables_get" id="SDI-w=Frs6WNZ}d92A|/">
+                                                              <block type="variables_get" id="ZoUMRYjHQL9U*4C)wpCr">
                                                                 <field name="VAR">Cell_X</field>
                                                               </block>
                                                             </value>
                                                             <value name="_Y">
-                                                              <block type="variables_get" id="z22uz8}GhMu/OYi?q0k;">
+                                                              <block type="variables_get" id="}3AXObpws%#-U~({t??=">
+                                                                <field name="VAR">Cell_Y</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </statement>
+                                                        <statement name="ELSE">
+                                                          <block type="set_pixel" id="74N0+P~*Rn?J=.9lcyHU">
+                                                            <field name="colour">#6600cc</field>
+                                                            <value name="_X">
+                                                              <block type="variables_get" id="BCJ4em.vG45QeEsZw-k(">
+                                                                <field name="VAR">Cell_X</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="_Y">
+                                                              <block type="variables_get" id="H#R]:](EAWPZez;HGeTb">
                                                                 <field name="VAR">Cell_Y</field>
                                                               </block>
                                                             </value>
                                                           </block>
                                                         </statement>
                                                         <next>
-                                                          <block type="variables_set" id="b9o1x7m:W/~)l;zgRGO@">
+                                                          <block type="variables_set" id="m_4hClx;S;Q#Sq`]swV~">
                                                             <field name="VAR">cell_number</field>
                                                             <value name="VALUE">
-                                                              <block type="math_arithmetic" id="5)sfggBRAr%uqeT`Zn[?">
+                                                              <block type="math_arithmetic" id=")|4|Eh=Y+83v3fzLn6.J">
                                                                 <field name="OP">ADD</field>
                                                                 <value name="A">
                                                                   <shadow id=",%[beI3,IRm~FRrStwUo" type="math_number">
                                                                     <field name="NUM">1</field>
                                                                   </shadow>
-                                                                  <block type="variables_get" id="qk^ylarWvu69?H|xH4cl">
+                                                                  <block type="variables_get" id="7tVSSNUMf630U}Tkbmd,">
                                                                     <field name="VAR">cell_number</field>
                                                                   </block>
                                                                 </value>
                                                                 <value name="B">
-                                                                  <shadow type="math_number" id="AeHZ~rI|iO4n-[^F=ypd">
+                                                                  <shadow type="math_number" id="?FR;UqS4DNvoFKf}0jyv">
                                                                     <field name="NUM">1</field>
                                                                   </shadow>
                                                                 </value>
@@ -544,7 +484,216 @@
                                                   </block>
                                                 </next>
                                               </block>
-                                            </statement>
+                                            </next>
+                                          </block>
+                                        </statement>
+                                        <next>
+                                          <block type="variables_set" id="-h24.lK(FzfE6I=KP||j">
+                                            <field name="VAR">cell_number</field>
+                                            <value name="VALUE">
+                                              <block type="math_number" id=";aO))~ycwlK;|EHN{:;{">
+                                                <field name="NUM">0</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="controls_forEach" id="jtarrC)dP=a6ZY(!Ynij">
+                                                <field name="VAR">grid_position</field>
+                                                <comment pinned="false" h="80" w="160">check for new</comment>
+                                                <value name="LIST">
+                                                  <block type="variables_get" id="D0HBQVxFZ*+8L7@D!O/`">
+                                                    <field name="VAR">life_list</field>
+                                                  </block>
+                                                </value>
+                                                <statement name="DO">
+                                                  <block type="text_print" id="p,~#QMPbP8DYA]=y]cpq">
+                                                    <value name="TEXT">
+                                                      <shadow type="text" id="]wPT`n*K%za[DIj!5sVt">
+                                                        <field name="TEXT">abc</field>
+                                                      </shadow>
+                                                      <block type="text_join" id="QcZ4Eu%;VbSN{z7_mTMs">
+                                                        <mutation items="2"></mutation>
+                                                        <value name="ADD0">
+                                                          <block type="text" id="dxuoJ@kI2:us@{!zNBK@">
+                                                            <field name="TEXT">grid_position = </field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="ADD1">
+                                                          <block type="variables_get" id="{y!csKO_Ed(*56pq0*]P">
+                                                            <field name="VAR">grid_position</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <next>
+                                                      <block type="controls_if" id=":}E6,UItqf`Ezt9)zfCC">
+                                                        <mutation else="1"></mutation>
+                                                        <value name="IF0">
+                                                          <block type="logic_compare" id="TP~*}1PsSezC7(%SxnJ=">
+                                                            <field name="OP">EQ</field>
+                                                            <value name="A">
+                                                              <block type="variables_get" id="9E7N:+}a{x2wr-BgQe3X">
+                                                                <field name="VAR">grid_position</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="B">
+                                                              <block type="math_number" id="iWin`26og4C#+o.JTJ;z">
+                                                                <field name="NUM">0</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </value>
+                                                        <statement name="DO0">
+                                                          <block type="text_print" id="jWUt~j)]yon#6shnrR~0">
+                                                            <value name="TEXT">
+                                                              <shadow type="text" id="hfA~|N0]~qrW7#|-MAD3">
+                                                                <field name="TEXT">grid==0 +test each cell</field>
+                                                              </shadow>
+                                                            </value>
+                                                            <next>
+                                                              <block type="procedures_callnoreturn" id="pa18LZp5)Yh|ht1O=c}B">
+                                                                <mutation name="life_number_2_xy_position">
+                                                                  <arg name="life_field_number"></arg>
+                                                                </mutation>
+                                                                <value name="ARG0">
+                                                                  <block type="variables_get" id="~F:qtYA*[5MgQ061o%IA">
+                                                                    <field name="VAR">cell_number</field>
+                                                                  </block>
+                                                                </value>
+                                                                <next>
+                                                                  <block type="variables_set" id="VyPD}ej:SKzwqMkZMy?G">
+                                                                    <field name="VAR">grid_position</field>
+                                                                    <value name="VALUE">
+                                                                      <block type="procedures_callreturn" id="6B)jWW1,a?faI--1^tG,">
+                                                                        <mutation name="test_Each_cell"></mutation>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </statement>
+                                                        <statement name="ELSE">
+                                                          <block type="variables_set" id="w|+eb;2C0{yT]Y@*8.LH">
+                                                            <field name="VAR">grid_position</field>
+                                                            <value name="VALUE">
+                                                              <block type="math_number" id="xXF}{9WjQ|)+^r4dS)[h">
+                                                                <field name="NUM">0</field>
+                                                              </block>
+                                                            </value>
+                                                          </block>
+                                                        </statement>
+                                                        <next>
+                                                          <block type="text_print" id="Kn5fq^;~+l1QC])J8jk[">
+                                                            <value name="TEXT">
+                                                              <shadow type="text" id="Q6agat{P.M)cR0E_pWyL">
+                                                                <field name="TEXT">abc</field>
+                                                              </shadow>
+                                                              <block type="text_join" id="{p1QQP?)~Tf)_IIcf=%J">
+                                                                <mutation items="4"></mutation>
+                                                                <value name="ADD0">
+                                                                  <block type="text" id="H{?7rGA@n3M*_B{LCc{u">
+                                                                    <field name="TEXT">x=</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="ADD1">
+                                                                  <block type="variables_get" id="19yCubtM^Nh,]e_ucCX/">
+                                                                    <field name="VAR">Cell_X</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="ADD2">
+                                                                  <block type="text" id="#n?nI%me)?]#`O3Nlx!J">
+                                                                    <field name="TEXT">y=</field>
+                                                                  </block>
+                                                                </value>
+                                                                <value name="ADD3">
+                                                                  <block type="variables_get" id="Bs1SpN9*KNQ(|KonnYS=">
+                                                                    <field name="VAR">Cell_Y</field>
+                                                                  </block>
+                                                                </value>
+                                                              </block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="controls_if" id=".0E8X-g|zLZ))[~3I5O:">
+                                                                <mutation else="1"></mutation>
+                                                                <value name="IF0">
+                                                                  <block type="logic_compare" id="gJe_}wzo/.]HS:~Wiv3?">
+                                                                    <field name="OP">EQ</field>
+                                                                    <value name="A">
+                                                                      <block type="variables_get" id=";2mz/rYVB^[w!.V~OmmU">
+                                                                        <field name="VAR">alive</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="B">
+                                                                      <block type="math_number" id="|wia5.p8IpVDTbp)mq+U">
+                                                                        <field name="NUM">1</field>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </value>
+                                                                <statement name="DO0">
+                                                                  <block type="set_pixel" id="hTB8L3Ng]lH%1@}f,7ff">
+                                                                    <field name="colour">#0000ff</field>
+                                                                    <value name="_X">
+                                                                      <block type="variables_get" id="SDI-w=Frs6WNZ}d92A|/">
+                                                                        <field name="VAR">Cell_X</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="_Y">
+                                                                      <block type="variables_get" id="z22uz8}GhMu/OYi?q0k;">
+                                                                        <field name="VAR">Cell_Y</field>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </statement>
+                                                                <statement name="ELSE">
+                                                                  <block type="set_pixel" id="GFKK0]hxm45`E-!V|42f">
+                                                                    <field name="colour">#028200</field>
+                                                                    <value name="_X">
+                                                                      <block type="variables_get" id="y!~64PgW7QjS[aij!1RH">
+                                                                        <field name="VAR">Cell_X</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="_Y">
+                                                                      <block type="variables_get" id="pL*{?TyM+D=dau;,4E?u">
+                                                                        <field name="VAR">Cell_Y</field>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </statement>
+                                                                <next>
+                                                                  <block type="variables_set" id="b9o1x7m:W/~)l;zgRGO@">
+                                                                    <field name="VAR">cell_number</field>
+                                                                    <value name="VALUE">
+                                                                      <block type="math_arithmetic" id="5)sfggBRAr%uqeT`Zn[?">
+                                                                        <field name="OP">ADD</field>
+                                                                        <value name="A">
+                                                                          <shadow id=",%[beI3,IRm~FRrStwUo" type="math_number">
+                                                                            <field name="NUM">1</field>
+                                                                          </shadow>
+                                                                          <block type="variables_get" id="qk^ylarWvu69?H|xH4cl">
+                                                                            <field name="VAR">cell_number</field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="B">
+                                                                          <shadow type="math_number" id="AeHZ~rI|iO4n-[^F=ypd">
+                                                                            <field name="NUM">1</field>
+                                                                          </shadow>
+                                                                        </value>
+                                                                      </block>
+                                                                    </value>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </statement>
+                                              </block>
+                                            </next>
                                           </block>
                                         </next>
                                       </block>
@@ -639,7 +788,7 @@
                 <mutation items="2"></mutation>
                 <value name="ADD0">
                   <block type="text" id="rpr)#YUIZzbHvlEy4QI]">
-                    <field name="TEXT">cell</field>
+                    <field name="TEXT">test cell #</field>
                   </block>
                 </value>
                 <value name="ADD1">
@@ -854,7 +1003,7 @@
                                           </block>
                                         </value>
                                         <next>
-                                          <block type="text_print" id="+gY!*vpwnO%L(8Tp+V_I" disabled="true">
+                                          <block type="text_print" id="+gY!*vpwnO%L(8Tp+V_I">
                                             <value name="TEXT">
                                               <shadow type="text" id="uOn(m8N8yw{k)-.LZL65">
                                                 <field name="TEXT">abc</field>
@@ -987,7 +1136,7 @@
                   </block>
                 </statement>
                 <next>
-                  <block type="text_print" id="#pr8krp7e3)j8i7s`kIC" disabled="true">
+                  <block type="text_print" id="#pr8krp7e3)j8i7s`kIC">
                     <value name="TEXT">
                       <shadow type="text" id="uOn(m8N8yw{k)-.LZL65">
                         <field name="TEXT">abc</field>
@@ -995,18 +1144,18 @@
                       <block type="text_join" id="f#/u5_K7}#}?nNj=yE]_">
                         <mutation items="4"></mutation>
                         <value name="ADD0">
-                          <block type="text" id="kx/z-d_)pxV@`t9y*616" disabled="true">
-                            <field name="TEXT">cell</field>
+                          <block type="text" id="kx/z-d_)pxV@`t9y*616">
+                            <field name="TEXT">cell#</field>
                           </block>
                         </value>
                         <value name="ADD1">
-                          <block type="variables_get" id="3?fVoA.pu)t`wzOGwCT}" disabled="true">
+                          <block type="variables_get" id="3?fVoA.pu)t`wzOGwCT}">
                             <field name="VAR">count</field>
                           </block>
                         </value>
                         <value name="ADD2">
                           <block type="text" id="@4:I87{eg[8k+Nehp@gt">
-                            <field name="TEXT">amount of live neighbour cells</field>
+                            <field name="TEXT">amount of live neighbour cells= </field>
                           </block>
                         </value>
                         <value name="ADD3">
