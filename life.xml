@@ -455,7 +455,7 @@
                                                               </block>
                                                             </statement>
                                                             <next>
-                                                              <block type="lists_setIndex" id="O.Wf%#7F]ba~J*_)W=~(" disabled="true">
+                                                              <block type="lists_setIndex" id="O.Wf%#7F]ba~J*_)W=~(">
                                                                 <mutation at="true"></mutation>
                                                                 <field name="MODE">SET</field>
                                                                 <field name="WHERE">FROM_START</field>
@@ -697,7 +697,7 @@
                                                                       </block>
                                                                     </statement>
                                                                     <next>
-                                                                      <block type="lists_setIndex" id="HAEIbPOt}W3DRAJq:9gC" disabled="true">
+                                                                      <block type="lists_setIndex" id="HAEIbPOt}W3DRAJq:9gC">
                                                                         <mutation at="true"></mutation>
                                                                         <field name="MODE">SET</field>
                                                                         <field name="WHERE">FROM_START</field>
@@ -848,13 +848,13 @@
           </block>
         </value>
         <next>
-          <block type="text_print" id="sP+4kN,~Sr0^buS1jT?o" disabled="true">
+          <block type="text_print" id="sP+4kN,~Sr0^buS1jT?o">
             <value name="TEXT">
               <shadow type="text" id="uOn(m8N8yw{k)-.LZL65">
                 <field name="TEXT">abc</field>
               </shadow>
               <block type="text_join" id="Nl;+6WeQHKqJmUlB650P">
-                <mutation items="2"></mutation>
+                <mutation items="4"></mutation>
                 <value name="ADD0">
                   <block type="text" id="rpr)#YUIZzbHvlEy4QI]">
                     <field name="TEXT">test cell #</field>
@@ -863,6 +863,16 @@
                 <value name="ADD1">
                   <block type="variables_get" id=";St=ZpGHkJIrm)vNh,2|">
                     <field name="VAR">cell_number</field>
+                  </block>
+                </value>
+                <value name="ADD2">
+                  <block type="variables_get" id="g_3QHS(|g8N)]4a0lgv/">
+                    <field name="VAR">Cell_X</field>
+                  </block>
+                </value>
+                <value name="ADD3">
+                  <block type="variables_get" id="b,dfJ{#=CNAnQ/N3Xz]1">
+                    <field name="VAR">Cell_Y</field>
                   </block>
                 </value>
               </block>
@@ -961,7 +971,7 @@
                                         <field name="OP">NEQ</field>
                                         <value name="A">
                                           <block type="variables_get" id="|/W0=9tmu*aMk@%)-`/Z">
-                                            <field name="VAR">Neighbour_cell_X</field>
+                                            <field name="VAR">Xposition</field>
                                           </block>
                                         </value>
                                         <value name="B">
@@ -976,7 +986,7 @@
                                         <field name="OP">NEQ</field>
                                         <value name="A">
                                           <block type="variables_get" id="M]A.lef5s(d};Q1)eGZc">
-                                            <field name="VAR">Neighbour_cell_Y</field>
+                                            <field name="VAR">Yposition</field>
                                           </block>
                                         </value>
                                         <value name="B">
@@ -1065,7 +1075,7 @@
                                       </block>
                                     </value>
                                     <next>
-                                      <block type="text_print" id="+gY!*vpwnO%L(8Tp+V_I" disabled="true">
+                                      <block type="text_print" id="+gY!*vpwnO%L(8Tp+V_I">
                                         <value name="TEXT">
                                           <shadow type="text" id="uOn(m8N8yw{k)-.LZL65">
                                             <field name="TEXT">abc</field>
@@ -1111,7 +1121,7 @@
                                             </value>
                                             <value name="ADD2">
                                               <block type="text" id="l.]:Cnk*cQi7zpDj@VZ4">
-                                                <field name="TEXT">cell value=</field>
+                                                <field name="TEXT"> cell value=</field>
                                               </block>
                                             </value>
                                             <value name="ADD3">
@@ -1173,7 +1183,7 @@
                                             </value>
                                             <value name="ADD4">
                                               <block type="text" id="h^Wpdrk;h0^ubOO.#xRA">
-                                                <field name="TEXT">counted live cells=</field>
+                                                <field name="TEXT"> counted live cells=</field>
                                               </block>
                                             </value>
                                             <value name="ADD5">
@@ -1210,7 +1220,7 @@
                         </value>
                         <value name="ADD1">
                           <block type="variables_get" id="3?fVoA.pu)t`wzOGwCT}">
-                            <field name="VAR">count</field>
+                            <field name="VAR">cell_number</field>
                           </block>
                         </value>
                         <value name="ADD2">
@@ -1335,7 +1345,7 @@ for birth of an empty cell neighbours must = 3
                               </block>
                             </value>
                             <next>
-                              <block type="text_print" id="[tfmZX:s^Adk`ex~X;L8" disabled="true">
+                              <block type="text_print" id="[tfmZX:s^Adk`ex~X;L8">
                                 <value name="TEXT">
                                   <shadow type="text" id="FiC(gJfQdTLhGr#-a7a_">
                                     <field name="TEXT">alive</field>
@@ -1429,7 +1439,7 @@ for birth of an empty cell neighbours must = 3
                               </block>
                             </value>
                             <next>
-                              <block type="text_print" id="F~Yx,p-)q}i:/4Wr*IdG" disabled="true">
+                              <block type="text_print" id="F~Yx,p-)q}i:/4Wr*IdG">
                                 <value name="TEXT">
                                   <shadow type="text" id="B}`4!02UQo}-67q59H5u">
                                     <field name="TEXT">birth</field>
@@ -1448,7 +1458,7 @@ for birth of an empty cell neighbours must = 3
                               </block>
                             </value>
                             <next>
-                              <block type="text_print" id="VkPi};kM#XX?t`mhW6zW" disabled="true">
+                              <block type="text_print" id="VkPi};kM#XX?t`mhW6zW">
                                 <value name="TEXT">
                                   <shadow type="text" id="fU6a!Q7TG03mD-mhih8`">
                                     <field name="TEXT">dead</field>
@@ -1462,7 +1472,7 @@ for birth of an empty cell neighbours must = 3
                           <block type="sleep_ms" id="XtbE,Q3MwRZ5+xx*brj3">
                             <value name="SLEEP_TIME_MILI">
                               <block type="math_number" id="5~l?g*ED[}=n+putSGnw">
-                                <field name="NUM">500</field>
+                                <field name="NUM">1000</field>
                               </block>
                             </value>
                           </block>
