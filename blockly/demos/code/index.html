@@ -16,6 +16,7 @@
   <script src="../../lua_compressed.js"></script>
   <script src="../../dart_compressed.js"></script>
   <script src="../../blocks/SHat_LED.js"></script>
+  <script src="../../blocks/Explorer_Hat-pro.js"></script>  
   <script src="../../blocks/time.js"></script>
   <script src="code.js"></script>
 </head>
@@ -861,6 +862,227 @@
 	<sep></sep>
     <category id="catVariables" colour="330" custom="VARIABLE"></category>
     <category id="catFunctions" colour="290" custom="PROCEDURE"></category>
+	  <category name="Explorer" colour="250">
+      <block type="lights" >
+       <value name="lights ">
+         <block type="colour_lights">
+          <field name="four_lights">0</field>
+         </block>
+       </value>
+      </block>
+	  
+	  <block type="fader">
+      <value name="fromx">
+      <block type="math_number">
+        <field name="NUM">10</field>
+      </block>
+      </value>
+      <value name="tox">
+      <block type="math_number">
+        <field name="NUM">90</field>
+      </block>
+      </value>
+      <value name="timex">
+      <block type="math_number">
+        <field name="NUM">1000</field>
+      </block>
+      </value>
+      </block>
+	  
+	  <block type="pulse">
+      <value name="inx">
+      <block type="math_number">
+        <field name="NUM">10</field>
+      </block>
+      </value>
+      <value name="outx">
+      <block type="math_number">
+        <field name="NUM">90</field>
+      </block>
+      </value>
+      <value name="ontimex">
+      <block type="math_number">
+        <field name="NUM">100</field>
+      </block>
+      </value>
+	        <value name="outtimex">
+      <block type="math_number">
+        <field name="NUM">100</field>
+      </block>
+      </value>
+      </block>
+	  
+	  
+	<block type="blink">
+      <value name="ontimex">
+      <block type="math_number">
+        <field name="NUM">0.1</field>
+      </block>
+      </value>
+	        <value name="outtimex">
+      <block type="math_number">
+        <field name="NUM">0.2</field>
+      </block>
+      </value>
+      </block>  
+	  
+	  
+      <block type="outputs"></block>
+     
+	  <block type="procedures_defnoreturn">
+    <mutation>
+      <arg name="channel"></arg>
+      <arg name="event"></arg>
+    </mutation>
+    <field name="NAME">handler_function</field>
+    <comment>function for touch</comment>
+    <statement name="STACK">
+      <block type="text_print" id=":7uOlLYy.b4Zh%?E}^DB">
+        <value name="TEXT">
+          <shadow type="text">
+            <field name="TEXT">Got</field>
+          </shadow>
+          <block type="text_join">
+            <mutation items="4"></mutation>
+            <value name="ADD0">
+              <block type="text">
+                <field name="TEXT">Got</field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="variables_get">
+                <field name="VAR">event</field>
+              </block>
+            </value>
+            <value name="ADD2">
+              <block type="text">
+                <field name="TEXT">on</field>
+              </block>
+            </value>
+            <value name="ADD3">
+              <block type="variables_get">
+                <field name="VAR">channel</field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>	  
+
+  <block type="touch">
+    <field name="handler_function">handler_function</field>
+    <value name="pads1">
+      <block type="pads">
+        <field name="pad">one</field>
+      </block>
+    </value>
+    <value name="events1">
+      <block type="events">
+        <field name="event">pressed</field>
+      </block>
+    </value>
+  </block>
+  
+   <block type="iftouch">
+    <value name="pads2">
+      <block type="pads">
+        <field name="pad">one</field>
+      </block>
+    </value>
+    <value name="events2">
+      <block type="is_events">
+        <field name="event">pressed</field>
+      </block>
+    </value>
+  </block>
+
+  
+  <block type="input_has_changed"></block>
+  <block type="input_clear_events"></block>
+  
+  
+  
+    <block type="input_read">
+    <field name="dinput">input</field>
+    <field name="read">read()</field>
+    <value name="pins">
+      <block type="ad_inputs">
+        <field name="ad_input">one</field>
+      </block>
+    </value>
+  </block>
+
+  
+  
+  
+  
+  
+  
+    <block type="input_function">
+    <field name="handler_function2">input_handler_function</field>
+    <value name="input_change">
+      <block type="ad_inputs_events">
+        <field name="ad_inputs_event">on_changed</field>
+      </block>
+    </value>
+    <value name="input_bounce_time">
+      <block type="math_number">
+        <field name="NUM">1</field>
+      </block>
+    </value>
+  </block>
+  
+
+  <block type="procedures_defnoreturn">
+    <mutation>
+      <arg name="channel"></arg>
+      <arg name="event"></arg>
+    </mutation>
+    <field name="NAME">input_handler_function</field>
+    <comment>function for input</comment>
+    <statement name="STACK">
+      <block type="text_print">
+        <value name="TEXT">
+          <shadow type="text">
+            <field name="TEXT">Got</field>
+          </shadow>
+          <block type="text_join">
+            <mutation items="4"></mutation>
+            <value name="ADD0">
+              <block type="text">
+                <field name="TEXT">Got</field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="variables_get">
+                <field name="VAR">event</field>
+              </block>
+            </value>
+            <value name="ADD2">
+              <block type="text">
+                <field name="TEXT">on</field>
+              </block>
+            </value>
+            <value name="ADD3">
+              <block type="variables_get">
+                <field name="VAR">channel</field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>	
+
+
+  
+      <block type="logic_ternary"></block>
+    </category>
+	
+	
+
+	
   </xml>
 
 </body>
