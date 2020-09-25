@@ -1,5 +1,6 @@
 # blocky & raspberry pi with a sensehat
 use blockly to help program the Raspberry Pi with a Sense Hat in pyhton
+This code no longer works:( on blockly
 
 1. GET the Code 
 https://developers.google.com/blockly/guides/get-started/web    ----->Get the Code
